@@ -2,6 +2,21 @@ var ScratchBlocks = window.ScratchBlocks;
 
 ScratchBlocks.Categories.html = {};
 
+ScratchBlocks.Blocks['html'] = {
+    init: function() {
+        this.jsonInit({
+            "id": "html",
+            "message0": "HTML",
+            "inputsInline": true,
+            "nextStatement": null,
+            "category": ScratchBlocks.Categories.html,
+            "colour": ScratchBlocks.Colours.control.primary,
+            "colourSecondary": ScratchBlocks.Colours.control.secondary,
+            "colourTertiary": ScratchBlocks.Colours.control.tertiary
+        });
+    }
+};
+
 ScratchBlocks.Blocks['html_element'] = {
     init: function() {
         this.jsonInit({
@@ -11,7 +26,7 @@ ScratchBlocks.Blocks['html_element'] = {
             "args0": [
                 {
                     "type": "input_value",
-                    "name": "TIMES"
+                    "name": "ELEMENT"
                 }
             ],
             "args1": [

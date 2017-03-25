@@ -26,8 +26,8 @@ window.onload = function () {
         project.name = name;
         var xml = window.ScratchBlocks.Xml.workspaceToDom(window.workspace);
         project.blocks = window.ScratchBlocks.Xml.domToPrettyText(xml);
-        var json = JSON.toString(project, null, 4);
-        console.log(json);
+        var json = JSON.stringify(project, null, 4);
+
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:attachment/text,' + encodeURI(json);
         hiddenElement.target = '_blank';

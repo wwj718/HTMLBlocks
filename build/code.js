@@ -16,8 +16,11 @@ function exportToHTML() {
 
 function blocksToNiceObject(html) {
     function getNext(block) {
-        console.log(block.getElementsByTagName("NEXT"));
-        if (block.getElementsByTagName("NEXT")) return block.getElementsByTagName("NEXT").childNodes[0];
+        console.log(block.getElementsByTagName("NEXT")[0]);
+        if (block.getElementsByTagName("NEXT")) {
+            var next = block.getElementsByTagName("NEXT");
+            return next.getElementsByTagName('BLOCK')[0];
+        }
     }
     function getChildren(block, pre) {
         if (!pre) var pre = [block];

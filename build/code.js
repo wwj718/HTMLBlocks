@@ -15,7 +15,6 @@ function exportToHTML() {
 }
 
 function getNext(block) {
-    console.log(block.getElementsByTagName("NEXT")[0]);
     if (block.getElementsByTagName("NEXT")[0]) {
         var next = block.getElementsByTagName("NEXT")[0];
         return next.getElementsByTagName('BLOCK')[0];
@@ -37,7 +36,7 @@ function blocksToHTML(block) {
 }
 
 function toNiceObject(blocks) {
-    if (blocks.length > 0) {
+    if (getNext(blocks[0])) {
         var niceObject = {};
         for (i = 0; i < blocks.length; i++) {
             niceObject[i] = {};

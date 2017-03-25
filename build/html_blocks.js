@@ -2,10 +2,10 @@ var ScratchBlocks = window.ScratchBlocks;
 
 ScratchBlocks.Categories.html = {};
 
-ScratchBlocks.Blocks['control_repeat'] = {
+ScratchBlocks.Blocks['html_element'] = {
     init: function() {
         this.jsonInit({
-            "id": "control_repeat",
+            "id": "html_element",
             "message0": "element %1",
             "message1": "%1",
             "args0": [

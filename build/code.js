@@ -14,29 +14,33 @@ function exportToHTML() {
     }
 }
 
-function blocksToNiceObject(html) {
-    function getNext(block) {
-        console.log(block.getElementsByTagName("NEXT")[0]);
-        if (block.getElementsByTagName("NEXT")[0]) {
-            var next = block.getElementsByTagName("NEXT")[0];
-            return next.getElementsByTagName('BLOCK')[0];
-        }
+function getNext(block) {
+    console.log(block.getElementsByTagName("NEXT")[0]);
+    if (block.getElementsByTagName("NEXT")[0]) {
+        var next = block.getElementsByTagName("NEXT")[0];
+        return next.getElementsByTagName('BLOCK')[0];
     }
-    function getChildren(block, pre) {
-        if (!pre) var pre = [block];
-        var next = getNext(block);
-        if (next) {
-            pre.push(next);
-            return getChildren(next, pre);
-        }
-        return pre;
-    }
-    return getChildren(html);
 }
-    
+function getChildren(block, pre) {
+    if (!pre) var pre = [block];
+    var next = getNext(block);
+    if (next) {
+        pre.push(next);
+        return getChildren(next, pre);
+    }
+    return pre;
+}
 
-function blocksToHTML(html) {
-    return blocksToNiceObject(html);
+function blocksToHTML(block) {
+    var blocks = getChildren(block);
+    for (i = 0; i < blocks.length; i++) {
+        toHTML(blocks[i]);
+    }
+}
+
+function toHTML(block) {
+    return block;
+    // TODO
 }
 
 window.onload = function () {

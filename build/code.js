@@ -7,7 +7,25 @@ function exportToHTML() {
             html = xml.childNodes[i];
         }
     }
-    return html;
+    if (html) {
+        return blocksToHTML(html.getElementsByTagName("NEXT")[0]);
+    } else {
+        return null;
+    }
+}
+
+function getNext(next, pre) {
+    if (!pre) var pre = [next];
+    var next2 = next.getElementsByTagName("NEXT");
+    if (next2) {
+        pre.push(next2);
+        return getNext(next2, pre);
+    }
+    return pre;
+}
+
+function blocksToHTML(next) {
+    return getNext(next);
 }
 
 window.onload = function () {

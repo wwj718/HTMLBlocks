@@ -1,14 +1,13 @@
-Blockly.Blocks['control_repeat'] = {
-    /**
-     * Block for repeat n times (external number).
-     * https://blockly-demo.appspot.com/static/demos/blockfactory/index.html#so57n9
-     * @this Blockly.Block
-     */
+var ScratchBlocks = window.ScratchBlocks;
+
+ScratchBlocks.Categories.html = {};
+
+ScratchBlocks.Blocks['control_repeat'] = {
     init: function() {
         this.jsonInit({
             "id": "control_repeat",
             "message0": "element %1",
-            "message1": "%1", // Statement
+            "message1": "%1",
             "args0": [
                 {
                     "type": "input_value",
@@ -24,10 +23,10 @@ Blockly.Blocks['control_repeat'] = {
             "inputsInline": true,
             "previousStatement": null,
             "nextStatement": null,
-            "category": Blockly.Categories.html,
-            "colour": Blockly.Colours.control.primary,
-            "colourSecondary": Blockly.Colours.control.secondary,
-            "colourTertiary": Blockly.Colours.control.tertiary
+            "category": ScratchBlocks.Categories.html,
+            "colour": ScratchBlocks.Colours.control.primary,
+            "colourSecondary": ScratchBlocks.Colours.control.secondary,
+            "colourTertiary": ScratchBlocks.Colours.control.tertiary
         });
     }
 };

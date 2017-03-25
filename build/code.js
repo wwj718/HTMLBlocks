@@ -36,15 +36,19 @@ function blocksToHTML(block) {
     return toNiceObject(blocks);
 }
 
-function toNiceObject(blocks, niceObject) {
-    if (!niceObject) var niceObject = {};
-    for (i = 0; i < blocks.length; i++) {
-        niceObject[i] = {};
-        niceObject[i].type = blocks[i].getAttribute('type');
-        niceObject[i].xml = blocks[i];
-        niceObject[i].children = toNiceObject([blocks[i]]);
+function toNiceObject(blocks) {
+    if (blocks.length > 0) {
+        var niceObject = {};
+        for (i = 0; i < blocks.length; i++) {
+            niceObject[i] = {};
+            niceObject[i].type = blocks[i].getAttribute('type');
+            niceObject[i].xml = blocks[i];
+            niceObject[i].children = toNiceObject([blocks[i]]);
+        }
+        return niceObject;
+    } else {
+        return null;
     }
-    return niceObject;
 }
 
 window.onload = function () {

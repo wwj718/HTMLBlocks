@@ -41,6 +41,7 @@ function toNiceObject(blocks, niceObject) {
     for (i = 0; i < blocks.length; i++) {
         niceObject[i] = {};
         niceObject[i].type = blocks[i].getAttribute('type');
+        niceObject[i].xml = blocks[i];
         niceObject[i].children = toNiceObject([blocks[i]]);
     }
     return niceObject;

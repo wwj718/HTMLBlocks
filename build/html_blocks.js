@@ -45,3 +45,25 @@ ScratchBlocks.Blocks['html_element'] = {
         });
     }
 };
+
+ScratchBlocks.Blocks['html_text'] = {
+    init: function() {
+        this.jsonInit({
+            "id": "html_element",
+            "message0": "%1",
+            "args0": [
+                {
+                    "type": "input_value",
+                    "name": "TEXT"
+                }
+            ],
+            "inputsInline": true,
+            "previousStatement": null,
+            "nextStatement": null,
+            "category": ScratchBlocks.Categories.html,
+            "colour": ScratchBlocks.Colours.control.primary,
+            "colourSecondary": ScratchBlocks.Colours.control.secondary,
+            "colourTertiary": ScratchBlocks.Colours.control.tertiary
+        });
+    }
+};

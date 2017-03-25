@@ -7,13 +7,6 @@ ScratchBlocks.Blocks['html'] = {
         this.jsonInit({
             "id": "html",
             "message0": "HTML",
-            "message1": "%1",
-            "args1": [
-                {
-                    "type": "input_statement",
-                    "name": "SUBSTACK"
-                }
-            ],
             "inputsInline": true,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.html,
@@ -57,7 +50,7 @@ ScratchBlocks.Blocks['html_text'] = {
     init: function() {
         this.jsonInit({
             "id": "html_element",
-            "message0": "%1",
+            "message0": "text %1",
             "args0": [
                 {
                     "type": "input_value",

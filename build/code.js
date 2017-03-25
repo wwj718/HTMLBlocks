@@ -1,14 +1,12 @@
-function getBlocks(block) {
-    var allBlocks = block.getDescendants();
-    var blocks = [];
-    for (i = 0; i < allBlocks.length; i++) {
-        if (allBlocks[i].getParent()) {
-            if (allBlocks[i].getParent() === block) {
-                blocks.push(allBlocks[i]);
-            }
+function exportToHTML(workspace) {
+    var xml = window.ScratchBlocks.Xml.workspaceToDom(workspace);
+    var html = null;
+    for (i = 0; i < xml.childNodes; i++) {
+        if (xml.childNodes[i].type === 'html') {
+            html = xml.childNodes[i];
         }
     }
-    return blocks;
+    return html;
 }
 
 window.onload = function () {

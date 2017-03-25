@@ -22,7 +22,7 @@ function getNext(block) {
     }
 }
 function getChildren(block, pre) {
-    if (!pre) var pre = [block];
+    if (!pre) var pre = [];
     var next = getNext(block);
     if (next) {
         pre.push(next);
@@ -33,14 +33,17 @@ function getChildren(block, pre) {
 
 function blocksToHTML(block) {
     var blocks = getChildren(block);
-    for (i = 0; i < blocks.length; i++) {
-        toHTML(blocks[i]);
-    }
+    return toNiceObject(blocks);
 }
 
-function toHTML(block) {
-    return block;
-    // TODO
+function toNiceObject(blocks, niceObject) {
+    if (!niceObject) var niceObject = {};
+    for (i = 0; i < blocks.length; i++) {
+        niceObject[i] = {};
+        niceObject[i].type = blocks[i].getAttribute('type');
+        niceObject[i].children = toNiceObject([blocks[i]]);
+    }
+    return niceObject;
 }
 
 window.onload = function () {

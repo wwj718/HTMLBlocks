@@ -17,8 +17,8 @@ function exportToHTML() {
 function blocksToNiceObject(html) {
     function getNext(block) {
         console.log(block.getElementsByTagName("NEXT")[0]);
-        if (block.getElementsByTagName("NEXT")) {
-            var next = block.getElementsByTagName("NEXT");
+        if (block.getElementsByTagName("NEXT")[0]) {
+            var next = block.getElementsByTagName("NEXT")[0];
             return next.getElementsByTagName('BLOCK')[0];
         }
     }

@@ -15,4 +15,5 @@ window.onload = function () {
     window.workspace = workspace;
     
     window.ScratchBlocks.Xml.domToWorkspace(document.getElementById('workspace'), workspace);
+    workspace.scrollCenter();
 };

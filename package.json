@@ -1,0 +1,18 @@
+{
+  "name": "html-blocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify index.js -o build/bundle.js && ncp node_modules/scratch-blocks/media build/media"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "scratch-blocks": "latest"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "ncp": "^2.0.0"
+  }
+}

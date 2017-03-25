@@ -38,6 +38,7 @@ body {
     border: none;
     border-bottom-color: lightgrey;
     border-bottom-style: solid;
+    font-size: 18px;
 }
 #name:focus {
     outline: none;

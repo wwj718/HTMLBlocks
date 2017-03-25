@@ -2,6 +2,7 @@ function exportToHTML(workspace) {
     var xml = window.ScratchBlocks.Xml.workspaceToDom(workspace);
     var html = null;
     for (i = 0; i < xml.childNodes; i++) {
+        console.log(xml.childNodes[i]);
         if (xml.childNodes[i].getAttribute('type') === 'html') {
             html = xml.childNodes[i];
         }

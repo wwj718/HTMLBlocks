@@ -20,8 +20,8 @@ window.onload = function () {
 
 document.getElementById('save').onclick = function () {
     var name = document.getElementById('name').value;
-    if (!name || name === "") {
-        name = "Untitled";
+    if (!name || name === '') {
+        name = 'Untitled';
     }
     var project = {};
     project.name = name;

@@ -8,6 +8,7 @@ function exportToHTML() {
         }
     }
     if (html) {
+        window.html = html;
         return blocksToHTML(html.getElementsByTagName("NEXT")[0]);
     } else {
         return null;

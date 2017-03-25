@@ -27,6 +27,7 @@ function blocksToNiceObject(html) {
         }
         return pre;
     }
+    return getChildren(html);
 }
     
 

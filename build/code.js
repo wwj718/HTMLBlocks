@@ -1,3 +1,16 @@
+function getBlocks(block) {
+    var allBlocks = block.getDescendants();
+    var blocks = [];
+    for (i = 0; i < allBlocks.length; i++) {
+        if (allBlocks[i].getParent()) {
+            if (allBlocks[i].getParent() === block) {
+                blocks.push(allBlocks[i]);
+            }
+        }
+    }
+    return blocks;
+}
+
 window.onload = function () {
     var workspace = window.ScratchBlocks.inject('blocks', {
         media: './media/',

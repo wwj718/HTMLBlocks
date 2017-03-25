@@ -8,25 +8,30 @@ function exportToHTML() {
         }
     }
     if (html) {
-        window.html = html;
-        return blocksToHTML(html.getElementsByTagName("NEXT")[0]);
+        return blocksToHTML(html);
     } else {
         return null;
     }
 }
 
-function getNext(next, pre) {
-    if (!pre) var pre = [next];
-    var next2 = next.getElementsByTagName("NEXT");
-    if (next2) {
-        pre.push(next2);
-        return getNext(next2, pre);
+function blocksToNiceObject(html) {
+    function getNext(block) {
+        if (block.childNodes[0]) return block.getElementsByTagName("NEXT").childNodes[0];
     }
-    return pre;
+    function getChildren(block, pre) {
+        if (!pre) var pre = [block];
+        var next = getNext(block);
+        if (next) {
+            pre.push(next);
+            return getChildren(next, pre);
+        }
+        return pre;
+    }
 }
+    
 
-function blocksToHTML(next) {
-    return getNext(next);
+function blocksToHTML(html) {
+    return blocksToNiceObject(html);
 }
 
 window.onload = function () {

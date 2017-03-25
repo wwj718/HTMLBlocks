@@ -7,6 +7,13 @@ ScratchBlocks.Blocks['html'] = {
         this.jsonInit({
             "id": "html",
             "message0": "HTML",
+            "message1": "%1",
+            "args1": [
+                {
+                    "type": "input_statement",
+                    "name": "SUBSTACK"
+                }
+            ],
             "inputsInline": true,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.html,

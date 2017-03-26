@@ -46,7 +46,9 @@ function toNiceObject(blocks) {
             var obj = {};
             obj.type = blocks[i].getAttribute('type');
             obj.xml = blocks[i];
-            obj.children = toNiceObject(getChildren(blocks[i], [], true));
+            obj.children = function () {
+                toNiceObject(getChildren(blocks[i], [], true));
+            };
             niceObject.push(obj);
         }
         return niceObject;

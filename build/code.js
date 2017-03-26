@@ -29,7 +29,7 @@ function getChildren(block, pre, substack) {
     var next = getNext(block, substack);
     if (next) {
         pre.push(next);
-        return getChildren(next, pre, substack);
+        return getChildren(next, pre);
     }
     return pre;
 }

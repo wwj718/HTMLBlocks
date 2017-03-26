@@ -42,12 +42,12 @@ function blocksToHTML(block) {
 function toNiceObject(blocks) {
     if (blocks[0]) {
         var niceObject = [];
-        console.log(blocks);
         for (i = 0; i < blocks.length; i++) {
-            niceObject[i] = {};
-            niceObject[i].type = blocks[i].getAttribute('type');
-            niceObject[i].xml = blocks[i];
-            niceObject[i].children = toNiceObject(getChildren(blocks[i], [], true));
+            var obj = {};
+            obj.type = blocks[i].getAttribute('type');
+            obj.xml = blocks[i];
+            obj.children = toNiceObject(getChildren(blocks[i], [], true));
+            niceObject.push(obj);
         }
         return niceObject;
     } else {

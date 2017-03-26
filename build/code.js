@@ -38,8 +38,8 @@ function blocksToHTML(block) {
 function toNiceObject(blocks) {
     if (blocks[0]) {
         var niceObject = [];
+        console.log(blocks);
         for (i = 0; i < blocks.length; i++) {
-            console.log(blocks[i]);
             niceObject[i] = {};
             niceObject[i].type = blocks[i].getAttribute('type');
             niceObject[i].xml = blocks[i];

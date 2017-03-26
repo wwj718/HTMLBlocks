@@ -14,18 +14,22 @@ function exportToHTML() {
     }
 }
 
-function getNext(block) {
-    if (block.getElementsByTagName("NEXT")[0]) {
-        var next = block.getElementsByTagName("NEXT")[0];
+function getNext(block, substack) {
+    var nextText = 'NEXT';
+    if (substack) {
+        nextText = 'STATEMENT';
+    }
+    if (block.getElementsByTagName(nextText)[0]) {
+        var next = block.getElementsByTagName(nextText)[0];
         return next.getElementsByTagName('BLOCK')[0];
     }
 }
-function getChildren(block, pre) {
+function getChildren(block, pre, substack) {
     if (!pre) var pre = [];
-    var next = getNext(block);
+    var next = getNext(block, substack);
     if (next) {
         pre.push(next);
-        return getChildren(next, pre);
+        return getChildren(next, pre, substack);
     }
     return pre;
 }
@@ -43,7 +47,7 @@ function toNiceObject(blocks) {
             niceObject[i] = {};
             niceObject[i].type = blocks[i].getAttribute('type');
             niceObject[i].xml = blocks[i];
-            niceObject[i].children = toNiceObject(getChildren(blocks[i]));
+            niceObject[i].children = toNiceObject(getChildren(blocks[i], [], true));
         }
         return niceObject;
     } else {

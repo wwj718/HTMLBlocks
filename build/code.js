@@ -88,6 +88,5 @@ window.onload = function () {
 };
 
 window.ScratchBlocks.JavaScript["text"] = function (block) {
-    console.log(block.getFieldValue('TEXT'));
-    return block.getFieldValue('TEXT');
+    return [block.getFieldValue('TEXT')];
 };

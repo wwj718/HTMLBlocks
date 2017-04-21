@@ -54,7 +54,7 @@ ScratchBlocks.JavaScript['html_element'] = function (block) {
     var code = "element.appendChild((function (element) {" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
         "return element;})(document.createElement('" + 
-        ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT', Blockly.JavaScript.ORDER_ADDITION) + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT') + 
         "')));";
     return code;
 };
@@ -83,7 +83,7 @@ ScratchBlocks.Blocks['html_text'] = {
 
 ScratchBlocks.JavaScript['html_text'] = function (block) {
     return "element.appendChild(document.createTextNode('" + 
-        ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'TEXT') + 
         "'));";
 };
 
@@ -115,8 +115,8 @@ ScratchBlocks.Blocks['html_attribute'] = {
 
 ScratchBlocks.JavaScript['html_attribute'] = function (block) {
     return "element.setAttribute('" + 
-        ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE', Blockly.JavaScript.ORDER_ADDITION) + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE') + 
         "','" + 
-        ScratchBlocks.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ADDITION) + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'VALUE') + 
         "');";
 };

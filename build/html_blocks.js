@@ -53,7 +53,7 @@ ScratchBlocks.Blocks['html_element'] = {
 ScratchBlocks.JavaScript['html_element'] = function (block) {
     var code = "element.appendChild((function (element) {" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
-        "})(document.createElement('" + 
+        "return element;})(document.createElement('" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT', Blockly.JavaScript.ORDER_ADDITION) + 
         "')));";
     return code;

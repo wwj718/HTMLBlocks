@@ -8,52 +8,25 @@ function exportToHTML() {
         }
     }
     if (html) {
-        return blocksToHTML(html);
-    } else {
-        return null;
-    }
-}
-
-function getNext(block, substack) {
-    var nextText = 'NEXT';
-    if (substack) {
-        nextText = 'STATEMENT';
-    }
-    if (block.getElementsByTagName(nextText)[0]) {
-        var next = block.getElementsByTagName(nextText)[0];
-        return next.getElementsByTagName('BLOCK')[0];
-    }
-}
-function getChildren(block, pre, substack) {
-    if (!pre) var pre = [];
-    var next = getNext(block, substack);
-    if (next) {
-        pre.push(next);
-        return getChildren(next, pre);
-    }
-    return pre;
-}
-
-function blocksToHTML(block) {
-    var blocks = getChildren(block);
-    return toNiceObject(blocks);
-}
-
-function toNiceObject(blocks) {
-    if (blocks[0]) {
-        var niceObject = [];
-        for (i = 0; i < blocks.length; i++) {
-            var obj = {};
-            obj.type = blocks[i].getAttribute('type');
-            obj.xml = blocks[i];
-            obj.children = function () {
-                toNiceObject(getChildren(blocks[i], [], true));
-            };
-            niceObject.push(obj);
+        eval(window.ScratchBlocks.JavaScript.workspaceToCode(window.ScratchBlocks.getMainWorkspace()));
+        if (element) {
+            var div = document.createElement("DIV");
+            div.appendChild(element);
+            var html = div.innerHTML;
+            var name = document.getElementById('name').value;
+            if (!name || name === '') {
+               name = 'Untitled';
+            }
+            var hiddenElement = document.createElement('a');
+            hiddenElement.href = 'data:attachment/text,' + encodeURI(html);
+            hiddenElement.target = '_blank';
+            hiddenElement.download = name + '.html';
+            hiddenElement.click();
+        } else {
+            throw "No HTML Code Generated";
         }
-        return niceObject;
     } else {
-        return null;
+        throw "No HTML Block!";
     }
 }
 

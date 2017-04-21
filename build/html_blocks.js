@@ -54,7 +54,7 @@ ScratchBlocks.JavaScript['html_element'] = function (block) {
     var code = "element.appendChild((function (element) {" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
         "})(document.createElement('" + 
-        ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT', Blockly.JavaScript.ORDER_ADDITION) || '' + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT', Blockly.JavaScript.ORDER_ADDITION) + 
         "'));";
     return code;
 };
@@ -82,5 +82,5 @@ ScratchBlocks.Blocks['html_text'] = {
 };
 
 ScratchBlocks.JavaScript['html_text'] = function (block) {
-    return "element.appendChild(document.createTextNode('" + ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) || '' + "'));";
+    return "element.appendChild(document.createTextNode('" + ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) + "'));";
 };

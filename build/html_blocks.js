@@ -18,7 +18,7 @@ ScratchBlocks.Blocks['html'] = {
 };
 
 ScratchBlocks.JavaScript['html'] = function () {
-    return "var element = document.createElement('HTML')";
+    return "var element = document.createElement('HTML');";
 };
 
 ScratchBlocks.Blocks['html_element'] = {
@@ -55,7 +55,7 @@ ScratchBlocks.JavaScript['html_element'] = function (block) {
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
         "})(document.createElement('" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT', Blockly.JavaScript.ORDER_ADDITION) || '' + 
-        "'))";
+        "'));";
     return code;
 };
 
@@ -82,5 +82,5 @@ ScratchBlocks.Blocks['html_text'] = {
 };
 
 ScratchBlocks.JavaScript['html_text'] = function (block) {
-    return "element.appendChild(document.createTextNode('" + ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) || '' + "'))";
+    return "element.appendChild(document.createTextNode('" + ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) || '' + "'));";
 };

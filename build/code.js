@@ -113,3 +113,7 @@ window.onload = function () {
         input.click();
     };
 };
+
+window.ScratchBlocks.JavaScript["text"] = function (block) {
+    return block.getFieldValue('TEXT');
+};

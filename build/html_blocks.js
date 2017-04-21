@@ -17,6 +17,10 @@ ScratchBlocks.Blocks['html'] = {
     }
 };
 
+ScratchBlocks.JavaScript['html'] = function () {
+    return "var element = document.createElement('HTML')";
+};
+
 ScratchBlocks.Blocks['html_element'] = {
     init: function() {
         this.jsonInit({
@@ -46,6 +50,15 @@ ScratchBlocks.Blocks['html_element'] = {
     }
 };
 
+ScratchBlocks.JavaScript['html_element'] = function (block) {
+    var code = "element.appendChild((function (element) {" + 
+        ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
+        "})(document.createElement('" + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT', Blockly.JavaScript.ORDER_ADDITION) || '' + 
+        "'))";
+    return code;
+};
+
 ScratchBlocks.Blocks['html_text'] = {
     init: function() {
         this.jsonInit({
@@ -66,4 +79,8 @@ ScratchBlocks.Blocks['html_text'] = {
             "colourTertiary": ScratchBlocks.Colours.control.tertiary
         });
     }
+};
+
+ScratchBlocks.JavaScript['html_text'] = function () {
+    return "element.appendChild(document.createTextNode('" + ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) || '' + "'))";
 };

@@ -81,6 +81,6 @@ ScratchBlocks.Blocks['html_text'] = {
     }
 };
 
-ScratchBlocks.JavaScript['html_text'] = function () {
+ScratchBlocks.JavaScript['html_text'] = function (block) {
     return "element.appendChild(document.createTextNode('" + ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) || '' + "'))";
 };

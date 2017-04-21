@@ -116,7 +116,7 @@ ScratchBlocks.Blocks['html_attribute'] = {
 ScratchBlocks.JavaScript['html_attribute'] = function (block) {
     return "element.setAttribute('" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE', Blockly.JavaScript.ORDER_ADDITION) + 
-        "," + 
+        "','" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ADDITION) + 
         "');";
 };

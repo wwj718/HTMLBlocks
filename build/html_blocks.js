@@ -62,7 +62,7 @@ ScratchBlocks.JavaScript['html_element'] = function (block) {
 ScratchBlocks.Blocks['html_text'] = {
     init: function() {
         this.jsonInit({
-            "id": "html_element",
+            "id": "html_text",
             "message0": "text %1",
             "args0": [
                 {
@@ -82,5 +82,41 @@ ScratchBlocks.Blocks['html_text'] = {
 };
 
 ScratchBlocks.JavaScript['html_text'] = function (block) {
-    return "element.appendChild(document.createTextNode('" + ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) + "'));";
+    return "element.appendChild(document.createTextNode('" + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ADDITION) + 
+        "'));";
+};
+
+ScratchBlocks.Blocks['html_attribute'] = {
+    init: function() {
+        this.jsonInit({
+            "id": "html_attribute",
+            "message0": "set attribute %1 to %2",
+            "args0": [
+                {
+                    "type": "input_value",
+                    "name": "ATTRIBUTE"
+                },
+                {
+                    "type": "input_value",
+                    "name": "VALUE"
+                }
+            ],
+            "inputsInline": true,
+            "previousStatement": null,
+            "nextStatement": null,
+            "category": ScratchBlocks.Categories.html,
+            "colour": ScratchBlocks.Colours.control.primary,
+            "colourSecondary": ScratchBlocks.Colours.control.secondary,
+            "colourTertiary": ScratchBlocks.Colours.control.tertiary
+        });
+    }
+};
+
+ScratchBlocks.JavaScript['html_attribute'] = function (block) {
+    return "element.setAttribute('" + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE', Blockly.JavaScript.ORDER_ADDITION) + 
+        "," + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ADDITION) + 
+        "');";
 };

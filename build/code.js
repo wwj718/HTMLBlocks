@@ -1,35 +1,3 @@
-function exportToHTML() {
-    var workspace = window.workspace;
-    var xml = window.ScratchBlocks.Xml.workspaceToDom(workspace);
-    var html = null;
-    for (i = 0; i < xml.childNodes.length; i++) {
-        if (xml.childNodes[i].getAttribute('type') === 'html') {
-            html = xml.childNodes[i];
-        }
-    }
-    if (html) {
-        eval(window.ScratchBlocks.JavaScript.workspaceToCode(window.ScratchBlocks.getMainWorkspace()));
-        if (element) {
-            var div = document.createElement("DIV");
-            div.appendChild(element);
-            var html = div.innerHTML;
-            var name = document.getElementById('name').value;
-            if (!name || name === '') {
-               name = 'Untitled';
-            }
-            var hiddenElement = document.createElement('a');
-            hiddenElement.href = 'data:attachment/text,' + encodeURI(html);
-            hiddenElement.target = '_blank';
-            hiddenElement.download = name + '.html';
-            hiddenElement.click();
-        } else {
-            throw "No HTML Code Generated";
-        }
-    } else {
-        throw "No HTML Block!";
-    }
-}
-
 window.onload = function () {
     var workspace = window.ScratchBlocks.inject('blocks', {
         media: './media/',
@@ -84,6 +52,38 @@ window.onload = function () {
             }
         };
         input.click();
+    };
+    
+    document.getElementById('export').onclick = function () {
+        var workspace = window.workspace;
+        var xml = window.ScratchBlocks.Xml.workspaceToDom(workspace);
+        var html = null;
+        for (i = 0; i < xml.childNodes.length; i++) {
+            if (xml.childNodes[i].getAttribute('type') === 'html') {
+                html = xml.childNodes[i];
+            }
+        }
+        if (html) {
+            eval(window.ScratchBlocks.JavaScript.workspaceToCode(window.ScratchBlocks.getMainWorkspace()));
+            if (element) {
+                var div = document.createElement("DIV");
+                div.appendChild(element);
+                var html = div.innerHTML;
+                var name = document.getElementById('name').value;
+                if (!name || name === '') {
+                   name = 'Untitled';
+                }
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:attachment/text,' + encodeURI(html);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = name + '.html';
+                hiddenElement.click();
+            } else {
+                throw "No HTML Code Generated";
+            }
+        } else {
+            throw "No HTML Block!";
+        }
     };
 };
 

@@ -55,7 +55,7 @@ ScratchBlocks.JavaScript['html_element'] = function (block) {
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
         "})(document.createElement('" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT', Blockly.JavaScript.ORDER_ADDITION) + 
-        "'));";
+        "')));";
     return code;
 };
 

@@ -64,7 +64,7 @@ window.onload = function () {
             }
         }
         if (html) {
-            eval(window.ScratchBlocks.JavaScript.workspaceToCode(window.ScratchBlocks.getMainWorkspace()));
+            eval(window.ScratchBlocks.JavaScript.blockToCode(html));
             if (element) {
                 var div = document.createElement("DIV");
                 div.appendChild(element);

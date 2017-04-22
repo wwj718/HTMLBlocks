@@ -1,3 +1,4 @@
-window.Blockly = require('scratch-blocks');
-window.ScratchBlocks = window.Blockly;
-window.ScratchBlocks.JavaScript = (require('scratch-blocks/javascript_compressed'))(window.Blockly);
+var ScratchBlocks = require('scratch-blocks');
+window.ScratchBlocks = ScratchBlocks;
+window.Blockly = ScratchBlocks;
+require('scratch-blocks/javascript_compressed');

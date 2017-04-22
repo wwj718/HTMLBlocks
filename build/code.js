@@ -48,7 +48,7 @@ window.onload = function () {
                         document.getElementById('name').value = project.name;
                         var xml = window.ScratchBlocks.Xml.textToDom(project.blocks);
                         window.ScratchBlocks.Xml.domToWorkspace(xml, workspace);
-                    } catch() {
+                    } catch(e) {
                         throw "Error Parsing";
                         workspace.clear();
                         window.ScratchBlocks.Xml.domToWorkspace(document.getElementById('workspace'), window.workspace);

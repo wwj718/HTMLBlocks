@@ -41,12 +41,18 @@ window.onload = function () {
             if (input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function(){
-                    var text = reader.result;
-                    workspace.clear();
-                    var project = JSON.parse(text);
-                    document.getElementById('name').value = project.name;
-                    var xml = window.ScratchBlocks.Xml.textToDom(project.blocks);
-                    window.ScratchBlocks.Xml.domToWorkspace(xml, workspace);
+                    try {
+                        var text = reader.result;
+                        workspace.clear();
+                        var project = JSON.parse(text);
+                        document.getElementById('name').value = project.name;
+                        var xml = window.ScratchBlocks.Xml.textToDom(project.blocks);
+                        window.ScratchBlocks.Xml.domToWorkspace(xml, workspace);
+                    } catch() {
+                        throw "Error Parsing";
+                        workspace.clear();
+                        window.ScratchBlocks.Xml.domToWorkspace(document.getElementById('workspace'), window.workspace);
+                    }
                 };
                 reader.readAsText(input.files[0]);
             }

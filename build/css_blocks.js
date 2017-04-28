@@ -1,5 +1,5 @@
 var ScratchBlocks = window.ScratchBlocks;
-ScratchBlocks.Categories.css = {};
+ScratchBlocks.Categories.css = "css";
 
 ScratchBlocks.Blocks['css'] = {
     init: function () {

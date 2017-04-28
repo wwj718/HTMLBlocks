@@ -47,10 +47,25 @@ ScratchBlocks.Blocks['css_selector'] = {
         var top = this.getParent();
         if (top && !top.previousConnection && top.type === "css") {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.looks.primary,
+                ScratchBlocks.Colours.looks.secondary,
+                ScratchBlocks.Colours.looks.tertiary
+            );
         } else if (top && top.previousConnection) {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.looks.primary,
+                ScratchBlocks.Colours.looks.secondary,
+                ScratchBlocks.Colours.looks.tertiary
+            );
         } else {
             this.setDisabled(true);
+            this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
         }
     }
 };

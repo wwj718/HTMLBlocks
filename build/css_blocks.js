@@ -16,6 +16,10 @@ ScratchBlocks.Blocks['css'] = {
     }
 };
 
+ScratchBlocks.JavaScript['css'] = function () {
+    return "var style = document.createElement('STYLE');";
+};
+
 ScratchBlocks.Blocks['css_selector'] = {
     init: function () {
         this.jsonInit({
@@ -75,4 +79,12 @@ ScratchBlocks.Blocks['css_selector'] = {
             );
         }
     }
+};
+
+ScratchBlocks.JavaScript['css_selector'] = function (block) {
+    return "style.appendChild(document.createTextNode('" + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'SELECTOR') + 
+        " {" + 
+        ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
+        "}'));";
 };

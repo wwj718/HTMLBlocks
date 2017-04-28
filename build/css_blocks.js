@@ -101,7 +101,7 @@ ScratchBlocks.Blocks['css_attribute'] = {
                 },
                 {
                     "type": "input_value",
-                    "name": "TO"
+                    "name": "VALUE"
                 }
             ],
             "inputsInline": true,
@@ -150,6 +150,6 @@ ScratchBlocks.Blocks['css_attribute'] = {
 ScratchBlocks.JavaScript['css_attribute'] = function (block) {
     return ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE') + 
         ": " + 
-        ScratchBlocks.JavaScript.valueToCode(block, 'TO') + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'VALUE') + 
         ";";
 };

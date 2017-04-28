@@ -63,7 +63,7 @@ ScratchBlocks.Blocks['css_selector'] = {
         }
         var realTop = getTop(this);
         var top = this.getSurroundParent() || this;
-        if (top.disabled) {
+        if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
             if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",
@@ -136,7 +136,7 @@ ScratchBlocks.Blocks['css_attribute'] = {
         }
         var realTop = getTop(this);
         var top = this.getSurroundParent() || this;
-        if (top.disabled) {
+        if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
             if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",

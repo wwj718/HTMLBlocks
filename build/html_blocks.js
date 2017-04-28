@@ -15,7 +15,6 @@ ScratchBlocks.Blocks['html'] = {
                 }
             ],
             "inputsInline": true,
-            "nextStatement": null,
             "category": ScratchBlocks.Categories.html,
             "colour": ScratchBlocks.Colours.control.primary,
             "colourSecondary": ScratchBlocks.Colours.control.secondary,
@@ -64,7 +63,14 @@ ScratchBlocks.Blocks['html_element'] = {
             return block;
         }
         var top = getTop(this);
-        if (!top.previousConnection && top.type === "html") {
+        if (top.disabled) {
+            this.setDisabled(true);
+            if (!this.isInsertionMarker()) this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
+        } else if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
@@ -126,7 +132,14 @@ ScratchBlocks.Blocks['html_text'] = {
             return block;
         }
         var top = getTop(this);
-        if (!top.previousConnection && top.type === "html") {
+        if (top.disabled) {
+            this.setDisabled(true);
+            if (!this.isInsertionMarker()) this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
+        } else if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
@@ -189,7 +202,14 @@ ScratchBlocks.Blocks['html_attribute'] = {
             return block;
         }
         var top = getTop(this);
-        if (!top.previousConnection && top.type === "html") {
+        if (top.disabled) {
+            this.setDisabled(true);
+            if (!this.isInsertionMarker()) this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
+        } else if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,

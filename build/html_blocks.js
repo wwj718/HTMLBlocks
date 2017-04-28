@@ -56,14 +56,14 @@ ScratchBlocks.Blocks['html_element'] = {
             return block;
         }
         var top = getTop(this);
-        if (top && !top.previousConnection && top.type === "html") {
+        if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
-        } else if (top && top.previousConnection) {
+        } else if (top.previousConnection) {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.control.primary,
@@ -118,14 +118,14 @@ ScratchBlocks.Blocks['html_text'] = {
             return block;
         }
         var top = getTop(this);
-        if (top && !top.previousConnection && top.type === "html") {
+        if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
-        } else if (top && top.previousConnection) {
+        } else if (top.previousConnection) {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.control.primary,
@@ -181,14 +181,14 @@ ScratchBlocks.Blocks['html_attribute'] = {
             return block;
         }
         var top = getTop(this);
-        if (top && !top.previousConnection && top.type === "html") {
+        if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
-        } else if (top && top.previousConnection) {
+        } else if (top.previousConnection) {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.control.primary,

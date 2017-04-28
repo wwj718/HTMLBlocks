@@ -47,6 +47,22 @@ ScratchBlocks.Blocks['html_element'] = {
             "colourSecondary": ScratchBlocks.Colours.control.secondary,
             "colourTertiary": ScratchBlocks.Colours.control.tertiary
         });
+    },
+    onchange: function () {
+        function getTop(block) {
+            if (block.getParent()) {
+                return getTop(block.getParent());
+            }
+            return block;
+        }
+        var top = getTop(this);
+        if (top && !top.previousConnection && top.type === "html") {
+            this.setDisabled(false);
+        } else if (top && top.previousConnection) {
+            this.setDisabled(false);
+        } else {
+            this.setDisabled(true);
+        }
     }
 };
 
@@ -78,6 +94,22 @@ ScratchBlocks.Blocks['html_text'] = {
             "colourSecondary": ScratchBlocks.Colours.control.secondary,
             "colourTertiary": ScratchBlocks.Colours.control.tertiary
         });
+    },
+    onchange: function () {
+        function getTop(block) {
+            if (block.getParent()) {
+                return getTop(block.getParent());
+            }
+            return block;
+        }
+        var top = getTop(this);
+        if (top && !top.previousConnection && top.type === "html") {
+            this.setDisabled(false);
+        } else if (top && top.previousConnection) {
+            this.setDisabled(false);
+        } else {
+            this.setDisabled(true);
+        }
     }
 };
 
@@ -110,6 +142,22 @@ ScratchBlocks.Blocks['html_attribute'] = {
             "colourSecondary": ScratchBlocks.Colours.control.secondary,
             "colourTertiary": ScratchBlocks.Colours.control.tertiary
         });
+    },
+    onchange: function () {
+        function getTop(block) {
+            if (block.getParent()) {
+                return getTop(block.getParent());
+            }
+            return block;
+        }
+        var top = getTop(this);
+        if (top && !top.previousConnection && top.type === "html") {
+            this.setDisabled(false);
+        } else if (top && top.previousConnection) {
+            this.setDisabled(false);
+        } else {
+            this.setDisabled(true);
+        }
     }
 };
 

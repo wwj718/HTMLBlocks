@@ -1,6 +1,6 @@
 var ScratchBlocks = window.ScratchBlocks;
 
-ScratchBlocks.Categories.html = {};
+ScratchBlocks.Categories.html = "html";
 
 ScratchBlocks.Blocks['html'] = {
     init: function() {
@@ -58,10 +58,25 @@ ScratchBlocks.Blocks['html_element'] = {
         var top = getTop(this);
         if (top && !top.previousConnection && top.type === "html") {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.control.primary,
+                ScratchBlocks.Colours.control.secondary,
+                ScratchBlocks.Colours.control.tertiary
+            );
         } else if (top && top.previousConnection) {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.control.primary,
+                ScratchBlocks.Colours.control.secondary,
+                ScratchBlocks.Colours.control.tertiary
+            );
         } else {
             this.setDisabled(true);
+            this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
         }
     }
 };
@@ -105,10 +120,25 @@ ScratchBlocks.Blocks['html_text'] = {
         var top = getTop(this);
         if (top && !top.previousConnection && top.type === "html") {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.control.primary,
+                ScratchBlocks.Colours.control.secondary,
+                ScratchBlocks.Colours.control.tertiary
+            );
         } else if (top && top.previousConnection) {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.control.primary,
+                ScratchBlocks.Colours.control.secondary,
+                ScratchBlocks.Colours.control.tertiary
+            );
         } else {
             this.setDisabled(true);
+            this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
         }
     }
 };
@@ -153,10 +183,25 @@ ScratchBlocks.Blocks['html_attribute'] = {
         var top = getTop(this);
         if (top && !top.previousConnection && top.type === "html") {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.control.primary,
+                ScratchBlocks.Colours.control.secondary,
+                ScratchBlocks.Colours.control.tertiary
+            );
         } else if (top && top.previousConnection) {
             this.setDisabled(false);
+            this.setColour(
+                ScratchBlocks.Colours.control.primary,
+                ScratchBlocks.Colours.control.secondary,
+                ScratchBlocks.Colours.control.tertiary
+            );
         } else {
             this.setDisabled(true);
+            this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
         }
     }
 };

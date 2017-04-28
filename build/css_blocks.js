@@ -47,21 +47,21 @@ ScratchBlocks.Blocks['css_selector'] = {
         var top = this.getParent() || this;
         if (!top.previousConnection && top.type === "css") {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,
                 ScratchBlocks.Colours.looks.secondary,
                 ScratchBlocks.Colours.looks.tertiary
             );
         } else if (top.previousConnection) {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,
                 ScratchBlocks.Colours.looks.secondary,
                 ScratchBlocks.Colours.looks.tertiary
             );
         } else {
             this.setDisabled(true);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",
                 "#CCCCAE",
                 "#CCCCAE"

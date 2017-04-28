@@ -92,7 +92,3 @@ window.onload = function () {
         }
     };
 };
-
-window.ScratchBlocks.JavaScript["text"] = function (block) {
-    return [block.getFieldValue('TEXT')];
-};

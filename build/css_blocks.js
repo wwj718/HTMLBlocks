@@ -1,6 +1,21 @@
 var ScratchBlocks = window.ScratchBlocks;
 ScratchBlocks.Categories.css = {};
 
+ScratchBlocks.Blocks['css'] = {
+    init: function() {
+        this.jsonInit({
+            "id": "css",
+            "message0": "CSS",
+            "inputsInline": true,
+            "nextStatement": null,
+            "category": ScratchBlocks.Categories.css,
+            "colour": ScratchBlocks.Colours.looks.primary,
+            "colourSecondary": ScratchBlocks.Colours.looks.secondary,
+            "colourTertiary": ScratchBlocks.Colours.looks.tertiary
+        });
+    }
+};
+
 ScratchBlocks.Blocks['css_selector'] = {
     init: function() {
         this.jsonInit({

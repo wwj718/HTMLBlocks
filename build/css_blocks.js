@@ -7,7 +7,7 @@ ScratchBlocks.Blocks['css'] = {
             "id": "css",
             "message0": "CSS",
             "message1": "%1",
-            "args0": [
+            "args1": [
                 {
                     "type": "input_statement",
                     "name": "SUBSTACK"
@@ -23,7 +23,7 @@ ScratchBlocks.Blocks['css'] = {
     }
 };
 
-ScratchBlocks.JavaScript['css'] = function () {
+ScratchBlocks.JavaScript['css'] = function (block) {
     return "var style = document.createElement('STYLE');" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK');
 };

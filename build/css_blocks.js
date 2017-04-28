@@ -14,7 +14,6 @@ ScratchBlocks.Blocks['css'] = {
                 }
             ],
             "inputsInline": true,
-            "nextStatement": null,
             "category": ScratchBlocks.Categories.css,
             "colour": ScratchBlocks.Colours.looks.primary,
             "colourSecondary": ScratchBlocks.Colours.looks.secondary,
@@ -64,7 +63,14 @@ ScratchBlocks.Blocks['css_selector'] = {
         }
         var realTop = getTop(this);
         var top = this.getSurroundParent() || this;
-        if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
+        if (top.disabled) {
+            this.setDisabled(true);
+            if (!this.isInsertionMarker()) this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
+        } else if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,
@@ -130,7 +136,14 @@ ScratchBlocks.Blocks['css_attribute'] = {
         }
         var realTop = getTop(this);
         var top = this.getSurroundParent() || this;
-        if (!realTop.previousConnection && top.type === "css_selector" && realTop.type === "css") {
+        if (top.disabled) {
+            this.setDisabled(true);
+            if (!this.isInsertionMarker()) this.setColour(
+                "#CCCCAE",
+                "#CCCCAE",
+                "#CCCCAE"
+            );
+        } else if (!realTop.previousConnection && top.type === "css_selector" && realTop.type === "css") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,

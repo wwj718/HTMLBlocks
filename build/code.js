@@ -69,9 +69,25 @@ window.onload = function () {
                 html = top[i];
             }
         }
+        var css = null;
+        for (i = 0; i < top.length; i++) {
+            if (top[i].type === 'css') {
+                css = top[i];
+            }
+        }
         if (html) {
             eval(window.ScratchBlocks.JavaScript.blockToCode(html));
             if (element) {
+                if (css) {
+                    eval(window.ScratchBlocks.JavaScript.blockToCode(css));
+                    if (style) {
+                        element.appendChild(style);
+                    } else {
+                        console.warn("No CSS Code Generated!");
+                    }
+                } else {
+                    console.warn("No CSS Block!");
+                }
                 var div = document.createElement("DIV");
                 div.appendChild(element);
                 var html = div.innerHTML;

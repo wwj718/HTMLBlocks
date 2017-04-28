@@ -44,15 +44,22 @@ ScratchBlocks.Blocks['css_selector'] = {
         });
     },
     onchange: function () {
+        function getTop(block) {
+            if (block.getParent()) {
+                return getTop(block.getParent());
+            }
+            return block;
+        }
+        var realTop = getTop(this);
         var top = this.getParent() || this;
-        if (!top.previousConnection && top.type === "css") {
+        if (!top.previousConnection && top.type === "css" && realTop.type === "css") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,
                 ScratchBlocks.Colours.looks.secondary,
                 ScratchBlocks.Colours.looks.tertiary
             );
-        } else if (top.previousConnection) {
+        } else if (realTop.previousConnection) {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,

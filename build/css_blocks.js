@@ -2,7 +2,7 @@ var ScratchBlocks = window.ScratchBlocks;
 ScratchBlocks.Categories.css = {};
 
 ScratchBlocks.Blocks['css'] = {
-    init: function() {
+    init: function () {
         this.jsonInit({
             "id": "css",
             "message0": "CSS",
@@ -17,7 +17,7 @@ ScratchBlocks.Blocks['css'] = {
 };
 
 ScratchBlocks.Blocks['css_selector'] = {
-    init: function() {
+    init: function () {
         this.jsonInit({
             "id": "css_selector",
             "message0": "selector %1",
@@ -42,5 +42,21 @@ ScratchBlocks.Blocks['css_selector'] = {
             "colourSecondary": ScratchBlocks.Colours.looks.secondary,
             "colourTertiary": ScratchBlocks.Colours.looks.tertiary
         });
+    },
+    onchange: function () {
+        function getTop(block) {
+            if (block.getParent()) {
+                return getTop(block.getParent());
+            }
+            return block;
+        }
+        var top = getTop(this);
+        if (top && !top.previousConnection && top.type === "css") {
+            this.setDisabled(false);
+        } else if (top && top.previousConnection) {
+            this.setDisabled(false);
+        } else {
+            this.setDisabled(true);
+        }
     }
 };

@@ -58,21 +58,21 @@ ScratchBlocks.Blocks['html_element'] = {
         var top = getTop(this);
         if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
         } else if (top.previousConnection) {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
         } else {
             this.setDisabled(true);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",
                 "#CCCCAE",
                 "#CCCCAE"
@@ -120,21 +120,21 @@ ScratchBlocks.Blocks['html_text'] = {
         var top = getTop(this);
         if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
         } else if (top.previousConnection) {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
         } else {
             this.setDisabled(true);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",
                 "#CCCCAE",
                 "#CCCCAE"
@@ -183,21 +183,21 @@ ScratchBlocks.Blocks['html_attribute'] = {
         var top = getTop(this);
         if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
         } else if (top.previousConnection) {
             this.setDisabled(false);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.control.primary,
                 ScratchBlocks.Colours.control.secondary,
                 ScratchBlocks.Colours.control.tertiary
             );
         } else {
             this.setDisabled(true);
-            this.setColour(
+            if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",
                 "#CCCCAE",
                 "#CCCCAE"

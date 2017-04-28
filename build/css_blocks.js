@@ -6,6 +6,13 @@ ScratchBlocks.Blocks['css'] = {
         this.jsonInit({
             "id": "css",
             "message0": "CSS",
+            "message1": "%1",
+            "args0": [
+                {
+                    "type": "input_statement",
+                    "name": "SUBSTACK"
+                }
+            ],
             "inputsInline": true,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.css,
@@ -17,7 +24,8 @@ ScratchBlocks.Blocks['css'] = {
 };
 
 ScratchBlocks.JavaScript['css'] = function () {
-    return "var style = document.createElement('STYLE');";
+    return "var style = document.createElement('STYLE');" + 
+        ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK');
 };
 
 ScratchBlocks.Blocks['css_selector'] = {
@@ -49,13 +57,13 @@ ScratchBlocks.Blocks['css_selector'] = {
     },
     onchange: function () {
         function getTop(block) {
-            if (block.getParent()) {
-                return getTop(block.getParent());
+            if (block.getSurroundParent()) {
+                return getTop(block.getSurroundParent());
             }
             return block;
         }
         var realTop = getTop(this);
-        var top = this.getParent() || this;
+        var top = this.getSurroundParent() || this;
         if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
@@ -115,13 +123,13 @@ ScratchBlocks.Blocks['css_attribute'] = {
     },
     onchange: function () {
         function getTop(block) {
-            if (block.getParent()) {
-                return getTop(block.getParent());
+            if (block.getSurroundParent()) {
+                return getTop(block.getSurroundParent());
             }
             return block;
         }
         var realTop = getTop(this);
-        var top = this.getParent() || this;
+        var top = this.getSurroundParent() || this;
         if (!realTop.previousConnection && top.type === "css_selector" && realTop.type === "css") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(

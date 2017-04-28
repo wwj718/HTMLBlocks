@@ -62,16 +62,14 @@ window.onload = function () {
     
     document.getElementById('export').onclick = function () {
         var workspace = window.workspace;
-        var xml = window.ScratchBlocks.Xml.workspaceToDom(workspace);
+        var top = workspace.getTopBlocks();
         var html = null;
-        for (i = 0; i < xml.childNodes.length; i++) {
-            if (xml.childNodes[i].getAttribute('type') === 'html') {
-                html = xml.childNodes[i];
+        for (i = 0; i < top.length; i++) {
+            if (top[i].type === 'html') {
+                html = top[i];
             }
         }
         if (html) {
-            console.log(html);
-            window.html = html;
             eval(window.ScratchBlocks.JavaScript.blockToCode(html));
             if (element) {
                 var div = document.createElement("DIV");

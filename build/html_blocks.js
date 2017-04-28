@@ -63,7 +63,7 @@ ScratchBlocks.Blocks['html_element'] = {
             return block;
         }
         var top = getTop(this);
-        if (top.disabled) {
+        if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
             if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",
@@ -132,7 +132,7 @@ ScratchBlocks.Blocks['html_text'] = {
             return block;
         }
         var top = getTop(this);
-        if (top.disabled) {
+        if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
             if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",
@@ -202,7 +202,7 @@ ScratchBlocks.Blocks['html_attribute'] = {
             return block;
         }
         var top = getTop(this);
-        if (top.disabled) {
+        if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
             if (!this.isInsertionMarker()) this.setColour(
                 "#CCCCAE",

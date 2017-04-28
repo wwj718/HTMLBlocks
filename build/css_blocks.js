@@ -93,7 +93,7 @@ ScratchBlocks.Blocks['css_attribute'] = {
     init: function () {
         this.jsonInit({
             "id": "css_attribute",
-            "message0": "set %1 to %2",
+            "message0": "set attribute %1 to %2",
             "args0": [
                 {
                     "type": "input_value",

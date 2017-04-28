@@ -44,15 +44,15 @@ ScratchBlocks.Blocks['css_selector'] = {
         });
     },
     onchange: function () {
-        var top = this.getParent();
-        if (top && !top.previousConnection && top.type === "css") {
+        var top = this.getParent() || this;
+        if (!top.previousConnection && top.type === "css") {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.looks.primary,
                 ScratchBlocks.Colours.looks.secondary,
                 ScratchBlocks.Colours.looks.tertiary
             );
-        } else if (top && top.previousConnection) {
+        } else if (top.previousConnection) {
             this.setDisabled(false);
             this.setColour(
                 ScratchBlocks.Colours.looks.primary,

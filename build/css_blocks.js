@@ -56,7 +56,7 @@ ScratchBlocks.Blocks['css_selector'] = {
         }
         var realTop = getTop(this);
         var top = this.getParent() || this;
-        if (!top.previousConnection && top.type === "css" && realTop.type === "css") {
+        if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,
@@ -122,7 +122,7 @@ ScratchBlocks.Blocks['css_attribute'] = {
         }
         var realTop = getTop(this);
         var top = this.getParent() || this;
-        if (!top.previousConnection && top.type === "css_selector" && realTop.type === "css") {
+        if (!realTop.previousConnection && top.type === "css_selector" && realTop.type === "css") {
             this.setDisabled(false);
             if (!this.isInsertionMarker()) this.setColour(
                 ScratchBlocks.Colours.looks.primary,

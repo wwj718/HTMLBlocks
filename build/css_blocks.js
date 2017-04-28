@@ -44,13 +44,7 @@ ScratchBlocks.Blocks['css_selector'] = {
         });
     },
     onchange: function () {
-        function getTop(block) {
-            if (block.getParent()) {
-                return getTop(block.getParent());
-            }
-            return block;
-        }
-        var top = getTop(this);
+        var top = this.getParent();
         if (top && !top.previousConnection && top.type === "css") {
             this.setDisabled(false);
         } else if (top && top.previousConnection) {

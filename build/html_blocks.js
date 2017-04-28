@@ -7,6 +7,13 @@ ScratchBlocks.Blocks['html'] = {
         this.jsonInit({
             "id": "html",
             "message0": "HTML",
+            "message1": "%1",
+            "args1": [
+                {
+                    "type": "input_statement",
+                    "name": "SUBSTACK"
+                }
+            ],
             "inputsInline": true,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.html,
@@ -17,8 +24,9 @@ ScratchBlocks.Blocks['html'] = {
     }
 };
 
-ScratchBlocks.JavaScript['html'] = function () {
-    return "var element = document.createElement('HTML');";
+ScratchBlocks.JavaScript['html'] = function (block) {
+    return "var element = document.createElement('HTML');" + 
+        ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK');
 };
 
 ScratchBlocks.Blocks['html_element'] = {
@@ -50,8 +58,8 @@ ScratchBlocks.Blocks['html_element'] = {
     },
     onchange: function () {
         function getTop(block) {
-            if (block.getParent()) {
-                return getTop(block.getParent());
+            if (block.getSurroundParent()) {
+                return getTop(block.getSurroundParent());
             }
             return block;
         }
@@ -112,8 +120,8 @@ ScratchBlocks.Blocks['html_text'] = {
     },
     onchange: function () {
         function getTop(block) {
-            if (block.getParent()) {
-                return getTop(block.getParent());
+            if (block.getSurroundParent()) {
+                return getTop(block.getSurroundParent());
             }
             return block;
         }
@@ -175,8 +183,8 @@ ScratchBlocks.Blocks['html_attribute'] = {
     },
     onchange: function () {
         function getTop(block) {
-            if (block.getParent()) {
-                return getTop(block.getParent());
+            if (block.getSurroundParent()) {
+                return getTop(block.getSurroundParent());
             }
             return block;
         }

@@ -70,6 +70,8 @@ window.onload = function () {
             }
         }
         if (html) {
+            console.log(html);
+            window.html = html;
             eval(window.ScratchBlocks.JavaScript.blockToCode(html));
             if (element) {
                 var div = document.createElement("DIV");

@@ -24,6 +24,7 @@ ScratchBlocks.Blocks['css'] = {
 
 ScratchBlocks.JavaScript['css'] = function (block) {
     return "var style = document.createElement('STYLE');" + 
+        "style.appendChild(document.createTextNode('\\n'));" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK');
 };
 
@@ -169,7 +170,7 @@ ScratchBlocks.Blocks['css_attribute'] = {
 };
 
 ScratchBlocks.JavaScript['css_attribute'] = function (block) {
-    return "    " + 
+    return "  " + 
         ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE') + 
         ": " + 
         ScratchBlocks.JavaScript.valueToCode(block, 'VALUE') + 

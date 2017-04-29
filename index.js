@@ -1,5 +1,5 @@
 var ScratchBlocks = require('scratch-blocks');
-window.beautify = require('js-beautify');
+window.Beautify = require('js-beautify').js_beautify;
 window.ScratchBlocks = ScratchBlocks;
 window.Blockly = ScratchBlocks;
 require('scratch-blocks/javascript_compressed');

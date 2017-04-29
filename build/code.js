@@ -25,7 +25,7 @@ window.onload = function () {
         var project = {};
         project.name = name;
         var xml = window.ScratchBlocks.Xml.workspaceToDom(window.workspace);
-        project.blocks = window.ScratchBlocks.Xml.domToPrettyText(xml);
+        project.blocks = window.xml_js.xml2js(window.ScratchBlocks.Xml.domToText(xml), {compact: true});
         var json = JSON.stringify(project, null, 4);
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:attachment/text,' + encodeURI(json);
@@ -46,7 +46,7 @@ window.onload = function () {
                         workspace.clear();
                         var project = JSON.parse(text);
                         document.getElementById('name').value = project.name;
-                        var xml = window.ScratchBlocks.Xml.textToDom(project.blocks);
+                        var xml = window.ScratchBlocks.Xml.textToDom(window.xml_js.js2xml(project.blocks, {compact: true, spaces: 2}));
                         window.ScratchBlocks.Xml.domToWorkspace(xml, workspace);
                     } catch(e) {
                         throw "Error Parsing";

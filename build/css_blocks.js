@@ -24,7 +24,6 @@ ScratchBlocks.Blocks['css'] = {
 
 ScratchBlocks.JavaScript['css'] = function (block) {
     return "var style = document.createElement('STYLE');" + 
-        "style.appendChild(document.createTextNode('\\n'));" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK');
 };
 
@@ -99,9 +98,9 @@ ScratchBlocks.Blocks['css_selector'] = {
 ScratchBlocks.JavaScript['css_selector'] = function (block) {
     return "style.appendChild(document.createTextNode('" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'SELECTOR') + 
-        " {\\n" + 
+        " {" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
-        "}\\n'));";
+        "}'));";
 };
 
 ScratchBlocks.Blocks['css_attribute'] = {
@@ -174,5 +173,5 @@ ScratchBlocks.JavaScript['css_attribute'] = function (block) {
         ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE') + 
         ": " + 
         ScratchBlocks.JavaScript.valueToCode(block, 'VALUE') + 
-        ";\\n";
+        ";";
 };

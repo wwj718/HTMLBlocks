@@ -3,7 +3,6 @@ var ScratchBlocks = require('scratch-blocks');
 window.ScratchBlocks = ScratchBlocks;
 window.Blockly = ScratchBlocks;
 require('scratch-blocks/javascript_compressed');
-window.Blockly = null;
 
 },{"scratch-blocks":2,"scratch-blocks/javascript_compressed":3}],2:[function(require,module,exports){
 module.exports =

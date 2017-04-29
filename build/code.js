@@ -90,7 +90,7 @@ window.onload = function () {
                 }
                 var div = document.createElement("DIV");
                 div.appendChild(element);
-                var html = div.innerHTML;
+                var html = window.js_beautify(div.innerHTML, { indent_size: 2 });
                 var name = document.getElementById('name').value;
                 if (!name || name === '') {
                    name = 'Untitled';

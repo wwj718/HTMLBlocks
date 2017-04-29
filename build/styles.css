@@ -39,6 +39,7 @@ body {
     border-bottom-color: lightgrey;
     border-bottom-style: solid;
     font-size: 18px;
+    text-align: center;
 }
 #name:focus {
     outline: none;

@@ -98,9 +98,9 @@ ScratchBlocks.Blocks['css_selector'] = {
 ScratchBlocks.JavaScript['css_selector'] = function (block) {
     return "style.appendChild(document.createTextNode('" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'SELECTOR') + 
-        " {" + 
+        " {\\n" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
-        "}'));";
+        "}\\n'));";
 };
 
 ScratchBlocks.Blocks['css_attribute'] = {
@@ -169,8 +169,9 @@ ScratchBlocks.Blocks['css_attribute'] = {
 };
 
 ScratchBlocks.JavaScript['css_attribute'] = function (block) {
-    return ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE') + 
+    return "    " + 
+        ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE') + 
         ": " + 
         ScratchBlocks.JavaScript.valueToCode(block, 'VALUE') + 
-        ";";
+        ";\\n";
 };

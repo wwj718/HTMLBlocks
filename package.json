@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "scratch-blocks": "latest"
+    "scratch-blocks": "latest",
+    "js-beautify": "latest"
   },
   "devDependencies": {
     "browserify": "^14.1.0",

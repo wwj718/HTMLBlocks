@@ -25,7 +25,7 @@ window.onload = function () {
         var project = {};
         project.name = name;
         var xml = window.ScratchBlocks.Xml.workspaceToDom(window.workspace);
-        project.blocks = window.xml_js.xml2js(window.ScratchBlocks.Xml.domToText(xml), {compact: true});
+        project.blocks = window.xml_js.xml2js(window.ScratchBlocks.Xml.domToText(xml), {compact: false});
         var json = JSON.stringify(project, null, 4);
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:attachment/text,' + encodeURI(json);
@@ -46,12 +46,13 @@ window.onload = function () {
                         workspace.clear();
                         var project = JSON.parse(text);
                         document.getElementById('name').value = project.name;
-                        var xml = window.ScratchBlocks.Xml.textToDom(window.xml_js.js2xml(project.blocks, {compact: true, spaces: 2}));
+                        var xml = window.ScratchBlocks.Xml.textToDom(window.xml_js.js2xml(project.blocks, {compact: false, spaces: 2}));
                         window.ScratchBlocks.Xml.domToWorkspace(xml, workspace);
                     } catch(e) {
-                        throw "Error Parsing";
+                        document.getElementById('name').value = "Untitled";
                         workspace.clear();
                         window.ScratchBlocks.Xml.domToWorkspace(document.getElementById('workspace'), window.workspace);
+                        throw "Error Parsing";
                     }
                 };
                 reader.readAsText(input.files[0]);

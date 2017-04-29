@@ -65,32 +65,16 @@ ScratchBlocks.Blocks['html_element'] = {
         var top = getTop(this);
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setColour(
-                "#CCCCAE",
-                "#CCCCAE",
-                "#CCCCAE"
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         } else if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setColour(
-                ScratchBlocks.Colours.control.primary,
-                ScratchBlocks.Colours.control.secondary,
-                ScratchBlocks.Colours.control.tertiary
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else if (top.previousConnection) {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setColour(
-                ScratchBlocks.Colours.control.primary,
-                ScratchBlocks.Colours.control.secondary,
-                ScratchBlocks.Colours.control.tertiary
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setColour(
-                "#CCCCAE",
-                "#CCCCAE",
-                "#CCCCAE"
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         }
     }
 };
@@ -134,32 +118,16 @@ ScratchBlocks.Blocks['html_text'] = {
         var top = getTop(this);
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setColour(
-                "#CCCCAE",
-                "#CCCCAE",
-                "#CCCCAE"
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         } else if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setColour(
-                ScratchBlocks.Colours.control.primary,
-                ScratchBlocks.Colours.control.secondary,
-                ScratchBlocks.Colours.control.tertiary
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else if (top.previousConnection) {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setColour(
-                ScratchBlocks.Colours.control.primary,
-                ScratchBlocks.Colours.control.secondary,
-                ScratchBlocks.Colours.control.tertiary
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setColour(
-                "#CCCCAE",
-                "#CCCCAE",
-                "#CCCCAE"
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         }
     }
 };
@@ -204,32 +172,16 @@ ScratchBlocks.Blocks['html_attribute'] = {
         var top = getTop(this);
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setColour(
-                "#CCCCAE",
-                "#CCCCAE",
-                "#CCCCAE"
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         } else if (!top.previousConnection && top.type === "html") {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setColour(
-                ScratchBlocks.Colours.control.primary,
-                ScratchBlocks.Colours.control.secondary,
-                ScratchBlocks.Colours.control.tertiary
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else if (top.previousConnection) {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setColour(
-                ScratchBlocks.Colours.control.primary,
-                ScratchBlocks.Colours.control.secondary,
-                ScratchBlocks.Colours.control.tertiary
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setColour(
-                "#CCCCAE",
-                "#CCCCAE",
-                "#CCCCAE"
-            );
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         }
     }
 };

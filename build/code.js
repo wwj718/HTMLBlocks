@@ -52,7 +52,8 @@ window.onload = function () {
                         document.getElementById('name').value = "Untitled";
                         workspace.clear();
                         window.ScratchBlocks.Xml.domToWorkspace(document.getElementById('workspace'), window.workspace);
-                        throw "Error Parsing";
+                        alert("Error: Invalid or Corrupt File");
+                        throw "Invalid or Corrupt File";
                     }
                 };
                 reader.readAsText(input.files[0]);
@@ -85,9 +86,11 @@ window.onload = function () {
                         element.appendChild(style);
                     } else {
                         console.warn("No CSS Code Generated!");
+                        alert("Warning: No CSS Code Generated!");
                     }
                 } else {
                     console.warn("No CSS Block!");
+                    alert("Warning: No CSS Block!");
                 }
                 var div = document.createElement("DIV");
                 div.appendChild(element);
@@ -102,9 +105,11 @@ window.onload = function () {
                 hiddenElement.download = name + '.html';
                 hiddenElement.click();
             } else {
-                throw "No HTML Code Generated";
+                alert("Error: No HTML Code Generated!");
+                throw "No HTML Code Generated!";
             }
         } else {
+            alert("Error: No HTML Block!");
             throw "No HTML Block!";
         }
     };

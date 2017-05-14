@@ -15,9 +15,9 @@ ScratchBlocks.Blocks['css'] = {
             ],
             "inputsInline": true,
             "category": ScratchBlocks.Categories.css,
-            "colour": ScratchBlocks.Colours.looks.primary,
-            "colourSecondary": ScratchBlocks.Colours.looks.secondary,
-            "colourTertiary": ScratchBlocks.Colours.looks.tertiary
+            "colour": ScratchBlocks.Colours.css.primary,
+            "colourSecondary": ScratchBlocks.Colours.css.secondary,
+            "colourTertiary": ScratchBlocks.Colours.css.tertiary
         });
     }
 };
@@ -49,9 +49,9 @@ ScratchBlocks.Blocks['css_selector'] = {
             "previousStatement": null,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.css,
-            "colour": ScratchBlocks.Colours.looks.primary,
-            "colourSecondary": ScratchBlocks.Colours.looks.secondary,
-            "colourTertiary": ScratchBlocks.Colours.looks.tertiary
+            "colour": ScratchBlocks.Colours.css.primary,
+            "colourSecondary": ScratchBlocks.Colours.css.secondary,
+            "colourTertiary": ScratchBlocks.Colours.css.tertiary
         });
     },
     onchange: function () {
@@ -106,9 +106,9 @@ ScratchBlocks.Blocks['css_attribute'] = {
             "previousStatement": null,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.css,
-            "colour": ScratchBlocks.Colours.looks.primary,
-            "colourSecondary": ScratchBlocks.Colours.looks.secondary,
-            "colourTertiary": ScratchBlocks.Colours.looks.tertiary
+            "colour": ScratchBlocks.Colours.css.primary,
+            "colourSecondary": ScratchBlocks.Colours.css.secondary,
+            "colourTertiary": ScratchBlocks.Colours.css.tertiary
         });
     },
     onchange: function () {

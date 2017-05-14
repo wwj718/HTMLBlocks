@@ -1,5 +1,8 @@
 var ScratchBlocks = window.ScratchBlocks;
 
+ScratchBlocks.Colour.html = ScratchBlocks.Colour.control;
+ScratchBlocks.Colour.css = ScratchBlocks.Colour.looks;
+
 ScratchBlocks.JavaScript.INDENT = "";
 
 ScratchBlocks.JavaScript["text"] = function (block) {

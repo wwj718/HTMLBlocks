@@ -16,9 +16,9 @@ ScratchBlocks.Blocks['html'] = {
             ],
             "inputsInline": true,
             "category": ScratchBlocks.Categories.html,
-            "colour": ScratchBlocks.Colours.control.primary,
-            "colourSecondary": ScratchBlocks.Colours.control.secondary,
-            "colourTertiary": ScratchBlocks.Colours.control.tertiary
+            "colour": ScratchBlocks.Colours.html.primary,
+            "colourSecondary": ScratchBlocks.Colours.html.secondary,
+            "colourTertiary": ScratchBlocks.Colours.html.tertiary
         });
     }
 };
@@ -50,9 +50,9 @@ ScratchBlocks.Blocks['html_element'] = {
             "previousStatement": null,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.html,
-            "colour": ScratchBlocks.Colours.control.primary,
-            "colourSecondary": ScratchBlocks.Colours.control.secondary,
-            "colourTertiary": ScratchBlocks.Colours.control.tertiary
+            "colour": ScratchBlocks.Colours.html.primary,
+            "colourSecondary": ScratchBlocks.Colours.html.secondary,
+            "colourTertiary": ScratchBlocks.Colours.html.tertiary
         });
     },
     onchange: function () {
@@ -103,9 +103,9 @@ ScratchBlocks.Blocks['html_text'] = {
             "previousStatement": null,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.html,
-            "colour": ScratchBlocks.Colours.control.primary,
-            "colourSecondary": ScratchBlocks.Colours.control.secondary,
-            "colourTertiary": ScratchBlocks.Colours.control.tertiary
+            "colour": ScratchBlocks.Colours.html.primary,
+            "colourSecondary": ScratchBlocks.Colours.html.secondary,
+            "colourTertiary": ScratchBlocks.Colours.html.tertiary
         });
     },
     onchange: function () {
@@ -157,9 +157,9 @@ ScratchBlocks.Blocks['html_attribute'] = {
             "previousStatement": null,
             "nextStatement": null,
             "category": ScratchBlocks.Categories.html,
-            "colour": ScratchBlocks.Colours.control.primary,
-            "colourSecondary": ScratchBlocks.Colours.control.secondary,
-            "colourTertiary": ScratchBlocks.Colours.control.tertiary
+            "colour": ScratchBlocks.Colours.html.primary,
+            "colourSecondary": ScratchBlocks.Colours.html.secondary,
+            "colourTertiary": ScratchBlocks.Colours.html.tertiary
         });
     },
     onchange: function () {

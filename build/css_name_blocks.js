@@ -1,1 +1,1 @@
-newHtmlNameBlock("css_name_font_size", "font-size");
+newNameBlock("css_name_font_size", "font-size");

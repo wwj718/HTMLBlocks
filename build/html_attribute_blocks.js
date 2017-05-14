@@ -10,7 +10,8 @@ var newHtmlAttributeBlock = function (internalName, displayName, attributeName) 
                 "colour": ScratchBlocks.Colours.control.primary,
                 "colourSecondary": ScratchBlocks.Colours.control.secondary,
                 "colourTertiary": ScratchBlocks.Colours.control.tertiary,
-                "outputShape": ScratchBlocks.OUTPUT_SHAPE_ROUND
+                "outputShape": ScratchBlocks.OUTPUT_SHAPE_ROUND,
+                "output": "String"
             });
         },
         onchange: function () {

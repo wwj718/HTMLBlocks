@@ -78,5 +78,5 @@ action {
 .blocklyFlyoutLabelText {
     font-size: 18;
     font-family: sans-serif;
-    padding-left: 10%;
+    text-anchor: end;
 }

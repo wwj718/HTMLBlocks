@@ -75,7 +75,7 @@ action {
     align-items: center;
 }
 
-.labelStyle>.blocklyFlyoutLabelText {
+.blocklyFlyoutLabelText {
     font-size: 18;
     font-family: sans-serif;
     float: left;

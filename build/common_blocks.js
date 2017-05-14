@@ -1,7 +1,7 @@
 var ScratchBlocks = window.ScratchBlocks;
 
-ScratchBlocks.Colour.html = ScratchBlocks.Colour.control;
-ScratchBlocks.Colour.css = ScratchBlocks.Colour.looks;
+ScratchBlocks.Colours.html = ScratchBlocks.Colours.control;
+ScratchBlocks.Colours.css = ScratchBlocks.Colours.looks;
 
 ScratchBlocks.JavaScript.INDENT = "";
 

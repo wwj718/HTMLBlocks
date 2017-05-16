@@ -65,16 +65,17 @@ ScratchBlocks.Blocks['css_selector'] = {
         var top = this.getSurroundParent() || this;
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         } else if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else if (realTop.previousConnection) {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else {
             this.setDisabled(true);
+        }
+        if (this.disabled) {
             if (!this.isInsertionMarker()) this.setOpacity(0.45);
+        } else {
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         }
     }
 };
@@ -122,16 +123,17 @@ ScratchBlocks.Blocks['css_attribute'] = {
         var top = this.getSurroundParent() || this;
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
             this.setDisabled(true);
-            if (!this.isInsertionMarker()) this.setOpacity(0.45);
         } else if (!realTop.previousConnection && top.type === "css_selector" && realTop.type === "css") {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else if (realTop.previousConnection) {
             this.setDisabled(false);
-            if (!this.isInsertionMarker()) this.setOpacity(1);
         } else {
             this.setDisabled(true);
+        }
+        if (this.disabled) {
             if (!this.isInsertionMarker()) this.setOpacity(0.45);
+        } else {
+            if (!this.isInsertionMarker()) this.setOpacity(1);
         }
     }
 };

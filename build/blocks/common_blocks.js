@@ -19,7 +19,7 @@ ScratchBlocks.JavaScript["text"] = function (block) {
     return [block.getFieldValue('TEXT')];
 };
 
-var newNameBlock = function (internalName, attributeName, category) {
+var newNameBlock = function (internalName, attributeName, category, block) {
     var ScratchBlocks = window.ScratchBlocks;
     ScratchBlocks.Blocks[internalName] = {
         init: function() {
@@ -34,6 +34,22 @@ var newNameBlock = function (internalName, attributeName, category) {
                 "outputShape": ScratchBlocks.OUTPUT_SHAPE_ROUND,
                 "output": "String"
             });
+        },
+        onchange: function () {
+            if (this.getParent() && this.getParent().disabled) {
+                this.setDisabled(true);
+                if (!this.isInsertionMarker()) this.setOpacity(0.45);
+            } else {
+                this.setDisabled(false);
+                if (!this.isInsertionMarker()) this.setOpacity(1);
+            }
+            if (this.getParent() && this.getParent().type === block) {
+                this.setDisabled(true);
+                if (!this.isInsertionMarker()) this.setOpacity(0.45);
+            } else {
+                this.setDisabled(false);
+                if (!this.isInsertionMarker()) this.setOpacity(1);
+            }
         }
     };
     ScratchBlocks.JavaScript[internalName] = function (block) {

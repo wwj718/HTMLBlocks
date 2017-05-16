@@ -76,7 +76,7 @@ ScratchBlocks.Blocks['html_element'] = {
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
-                    if (inputs[i].connection.targetBlock().disabled) {
+                    if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
                         this.setDisabled(true);
                     }
                 }
@@ -140,7 +140,7 @@ ScratchBlocks.Blocks['html_text'] = {
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
-                    if (inputs[i].connection.targetBlock().disabled) {
+                    if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
                         this.setDisabled(true);
                     }
                 }
@@ -205,7 +205,7 @@ ScratchBlocks.Blocks['html_attribute'] = {
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
-                    if (inputs[i].connection.targetBlock().disabled) {
+                    if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
                         this.setDisabled(true);
                     }
                 }

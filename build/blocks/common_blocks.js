@@ -8,9 +8,12 @@ ScratchBlocks.JavaScript.INDENT = "";
 ScratchBlocks.Blocks["text"].onchange = function () {
     if (this.getParent() && this.getParent().disabled) {
         this.setDisabled(true);
-        if (!this.isInsertionMarker()) this.setOpacity(0.45);
     } else {
         this.setDisabled(false);
+    }
+    if (this.disabled) {
+        if (!this.isInsertionMarker()) this.setOpacity(0.45);
+    } else {
         if (!this.isInsertionMarker()) this.setOpacity(1);
     }
 };
@@ -47,6 +50,11 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             } else {
                 this.setDisabled(false);
                 this.getParent().setDisabled(false);
+            }
+            if (this.disabled) {
+                if (!this.isInsertionMarker()) this.setOpacity(0.45);
+            } else {
+                if (!this.isInsertionMarker()) this.setOpacity(1);
             }
         }
     };

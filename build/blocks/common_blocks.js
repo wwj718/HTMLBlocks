@@ -38,17 +38,15 @@ var newNameBlock = function (internalName, attributeName, category, block) {
         onchange: function () {
             if (this.getParent() && this.getParent().disabled) {
                 this.setDisabled(true);
-                if (!this.isInsertionMarker()) this.setOpacity(0.45);
             } else {
                 this.setDisabled(false);
-                if (!this.isInsertionMarker()) this.setOpacity(1);
             }
             if (this.getParent() && this.getParent().type === block) {
                 this.setDisabled(true);
-                if (!this.isInsertionMarker()) this.setOpacity(0.45);
+                this.getParent().setDisabled(true);
             } else {
                 this.setDisabled(false);
-                if (!this.isInsertionMarker()) this.setOpacity(1);
+                this.getParent().setDisabled(false);
             }
         }
     };

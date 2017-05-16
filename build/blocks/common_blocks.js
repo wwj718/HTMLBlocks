@@ -39,12 +39,12 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             });
         },
         onchange: function () {
-            if (this.getParent() && this.getParent().type === block) {
+            if (this.getParent() && !(this.getParent().type === block)) {
                 this.setDisabled(true);
                 this.getParent().setDisabled(true);
             } else {
                 this.setDisabled(false);
-                this.getParent().setDisabled(false);
+                if (this.getParent()) this.getParent().setDisabled(false);
             }
             if (this.getParent() && this.getParent().disabled) {
                 this.setDisabled(true);

@@ -5,6 +5,16 @@ ScratchBlocks.Colours.css = ScratchBlocks.Colours.looks;
 
 ScratchBlocks.JavaScript.INDENT = "";
 
+ScratchBlocks.Blocks["text"].onchange = function () {
+    if (this.getParent() && this.getParent().disabled) {
+        this.setDisabled(true);
+        if (!this.isInsertionMarker()) this.setOpacity(0.45);
+    } else {
+        this.setDisabled(false);
+        if (!this.isInsertionMarker()) this.setOpacity(1);
+    }
+};
+
 ScratchBlocks.JavaScript["text"] = function (block) {
     return [block.getFieldValue('TEXT')];
 };

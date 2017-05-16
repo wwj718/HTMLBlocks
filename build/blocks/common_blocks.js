@@ -26,6 +26,7 @@ var newNameBlock = function (internalName, attributeName, category, block) {
     var ScratchBlocks = window.ScratchBlocks;
     ScratchBlocks.Blocks[internalName] = {
         init: function() {
+            this.isName = true;
             this.jsonInit({
                 "id": internalName,
                 "message0": attributeName,

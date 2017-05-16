@@ -1,30 +1,6 @@
 var ScratchBlocks = window.ScratchBlocks;
 ScratchBlocks.Categories.css = "css";
 
-function cssOnChange() {
-    function getTop(block) {
-        if (block.getSurroundParent()) {
-            return getTop(block.getSurroundParent());
-        }
-        return block;
-    }
-    var realTop = getTop(this);
-    var top = this.getSurroundParent() || this;
-    if (this.getSurroundParent() && this.getSurroundParent().disabled) {
-        this.setDisabled(true);
-        if (!this.isInsertionMarker()) this.setOpacity(0.45);
-    } else if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
-        this.setDisabled(false);
-        if (!this.isInsertionMarker()) this.setOpacity(1);
-    } else if (realTop.previousConnection) {
-        this.setDisabled(false);
-        if (!this.isInsertionMarker()) this.setOpacity(1);
-    } else {
-        this.setDisabled(true);
-        if (!this.isInsertionMarker()) this.setOpacity(0.45);
-    }
-}
-
 ScratchBlocks.Blocks['css'] = {
     init: function () {
         this.jsonInit({
@@ -79,7 +55,27 @@ ScratchBlocks.Blocks['css_selector'] = {
         });
     },
     onchange: function () {
-        
+        function getTop(block) {
+            if (block.getSurroundParent()) {
+                return getTop(block.getSurroundParent());
+            }
+            return block;
+        }
+        var realTop = getTop(this);
+        var top = this.getSurroundParent() || this;
+        if (this.getSurroundParent() && this.getSurroundParent().disabled) {
+            this.setDisabled(true);
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
+        } else if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
+            this.setDisabled(false);
+            if (!this.isInsertionMarker()) this.setOpacity(1);
+        } else if (realTop.previousConnection) {
+            this.setDisabled(false);
+            if (!this.isInsertionMarker()) this.setOpacity(1);
+        } else {
+            this.setDisabled(true);
+            if (!this.isInsertionMarker()) this.setOpacity(0.45);
+        }
     }
 };
 

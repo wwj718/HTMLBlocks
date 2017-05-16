@@ -42,9 +42,11 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             if (this.getParent() && !(this.getParent().type === block)) {
                 this.setDisabled(true);
                 this.getParent().setDisabled(true);
+                this.getParent().onchange.call(this.getParent());
             } else {
                 this.setDisabled(false);
                 if (this.getParent()) this.getParent().setDisabled(false);
+                if (this.getParent()) this.getParent().onchange.call(this.getParent());
             }
             if (this.getParent() && this.getParent().disabled) {
                 this.setDisabled(true);

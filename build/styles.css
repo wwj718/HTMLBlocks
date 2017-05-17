@@ -1,6 +1,6 @@
 body {
     overflow: hidden;
-    margin: none;
+    margin: 0;
 }
 #blocks {
     position: absolute;
@@ -92,10 +92,11 @@ action {
     position: absolute;
     margin: 0;
     padding: 0;
-    margin: 5%;
+    margin: 0;
     top: 0;
     right: 0;
     height: 100%;
+    width: 100%;
     background-color: rgba(0,0,0,0.2);
     z-index: 200;
 }

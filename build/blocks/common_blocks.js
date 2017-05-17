@@ -49,6 +49,7 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             } else {
                 this.disabled = true;
             }
+            if (this.getParent()) this.getParent().onchange();
             if (this.disabled) {
                 if (!this.isInsertionMarker()) this.setOpacity(0.45);
             } else {

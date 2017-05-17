@@ -30,7 +30,6 @@ ScratchBlocks.JavaScript['html'] = function (block) {
 
 ScratchBlocks.Blocks['html_element'] = {
     init: function() {
-        this.inputDisabled = false;
         this.jsonInit({
             "id": "html_element",
             "message0": "element %1",
@@ -73,13 +72,11 @@ ScratchBlocks.Blocks['html_element'] = {
         } else {
             this.setDisabled(true);
         }
-        this.inputDisabled = false;
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.inputDisabled = true;
                         this.setDisabled(true);
                     }
                 }
@@ -104,7 +101,6 @@ ScratchBlocks.JavaScript['html_element'] = function (block) {
 
 ScratchBlocks.Blocks['html_text'] = {
     init: function() {
-        this.inputDisabled = false;
         this.jsonInit({
             "id": "html_text",
             "message0": "text %1",
@@ -140,13 +136,11 @@ ScratchBlocks.Blocks['html_text'] = {
         } else {
             this.setDisabled(true);
         }
-        this.inputDisabled = false;
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.inputDisabled = true;
                         this.setDisabled(true);
                     }
                 }
@@ -207,13 +201,11 @@ ScratchBlocks.Blocks['html_attribute'] = {
         } else {
             this.setDisabled(true);
         }
-        this.inputDisabled = false;
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.inputDisabled = true;
                         this.setDisabled(true);
                     }
                 }

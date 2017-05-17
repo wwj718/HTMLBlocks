@@ -40,9 +40,9 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             });
         },
         onchange: function () {
-            console.log(block);
-            console.log(this.getParent());
-            if (this.getParent() && this.getParent().type === block) {
+            this.setDisabled(false);
+            if (this.getParent()) this.getParent().onchange();
+            if (this.getParent() && this.getParent().type === block && !this.getParent().disabled) {
                 console.log("Good Block");
                 this.setDisabled(false);
             } else if (!this.getParent()) {
@@ -50,10 +50,6 @@ var newNameBlock = function (internalName, attributeName, category, block) {
                 this.setDisabled(false);
             } else {
                 console.log("Bad Block");
-                this.setDisabled(true);
-            }
-            if (this.getParent() && this.getParent().disabled) {
-                console.log("Parent Disabled");
                 this.setDisabled(true);
             }
             if (this.disabled) {

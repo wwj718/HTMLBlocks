@@ -72,6 +72,7 @@ action {
     font-size: 18px;
     height: 100%;
     display: flex;
+    font-family: sans-serif;
     align-items: center;
 }
 
@@ -110,4 +111,14 @@ action {
     font-size: 36pt;
     content: "✕";
     margin: 5%;
+}
+#textContainer {
+    text-align: center;
+}
+#text {
+    padding: 0;
+    width: 100%;
+    font-size: 16pt;
+    margin: 5%;
+    height: 100%;
 }

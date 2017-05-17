@@ -81,8 +81,12 @@ action {
     text-anchor: end;
 }
 #boxInner {
-    margin: 50%;
+    position: absolute;
     background-color: white;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
 }
 #boxOuter {
     position: absolute;
@@ -92,4 +96,6 @@ action {
     right: 0;
     width: 100%;
     height: 100%;
+    background-color: black;
+    z-index: 200;
 }

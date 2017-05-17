@@ -98,4 +98,9 @@ action {
     height: 100%;
     background-color: black;
     z-index: 200;
+    opacity: 0.2;
+}
+#close::before {
+    font-size: 36pt;
+    content: "✕";
 }

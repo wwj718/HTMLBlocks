@@ -43,12 +43,11 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             if (this.getParent() && this.getParent().disabled) {
                 this.setDisabled(true);
             } else {
-                this.setDisabled(false);
-            }
-            if (this.getParent() && this.getParent().type !== block) {
-                this.setDisabled(true);
-            } else {
-                this.setDisabled(false);
+                if (this.getParent() && this.getParent().type !== block) {
+                    this.setDisabled(true);
+                } else {
+                    this.setDisabled(false);
+                }
             }
             if (this.disabled) {
                 if (!this.isInsertionMarker()) this.setOpacity(0.45);

@@ -22,7 +22,7 @@ ScratchBlocks.JavaScript["text"] = function (block) {
     return [block.getFieldValue('TEXT')];
 };
 
-var newNameBlock = function (internalName, attributeName, category, block) {
+var newNameBlock = function (internalName, attributeName, category, block, inputName) {
     var ScratchBlocks = window.ScratchBlocks;
     ScratchBlocks.Blocks[internalName] = {
         init: function() {
@@ -42,7 +42,7 @@ var newNameBlock = function (internalName, attributeName, category, block) {
         onchange: function () {
             this.disabled = false;
             if (this.getParent()) this.getParent().onchange();
-            if (this.getParent() && this.getParent().type === block && !this.getParent().disabled) {
+            if (this.getParent() && this.getParent().type === block && !this.getParent().disabled && this.getParent().getInputTargetBlock(inputName) === this) {
                 this.disabled = false;
             } else if (!this.getParent()) {
                 this.disabled = false;

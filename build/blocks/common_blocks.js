@@ -40,17 +40,19 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             });
         },
         onchange: function () {
-            if (this.getParent() && this.getParent().disabled) {
+            if (this.getParent() && this.getParent().type === block) {
+                console.log("Good Block");
+                this.setDisabled(false);
+            } else if (!this.getParent()) {
+                console.log("No Block");
+                this.setDisabled(false);
+            } else {
+                console.log("Bad Block");
+                this.setDisabled(true);
+            }
+            if (this.getParent() && this.getParent().disabled && !this.getParent().inputDisabled) {
                 console.log("Parent Disabled");
                 this.setDisabled(true);
-            } else {
-                if (this.getParent() && this.getParent().type !== block) {
-                    console.log("Bad Block");
-                    this.setDisabled(true);
-                } else {
-                    console.log("Yeah!");
-                    this.setDisabled(false);
-                }
             }
             if (this.disabled) {
                 if (!this.isInsertionMarker()) this.setOpacity(0.45);

@@ -88,6 +88,7 @@ action {
     width: 50%;
     height: 50%;
     padding: 5%;
+    opacity: 1;
 }
 #boxOuter {
     position: absolute;

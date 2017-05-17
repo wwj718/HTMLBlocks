@@ -87,6 +87,7 @@ action {
     left: 25%;
     width: 50%;
     height: 50%;
+    padding: 5%;
 }
 #boxOuter {
     position: absolute;
@@ -101,6 +102,8 @@ action {
     opacity: 0.2;
 }
 #close::before {
+    width: 100%;
+    text-align: right;
     font-size: 36pt;
     content: "✕";
 }

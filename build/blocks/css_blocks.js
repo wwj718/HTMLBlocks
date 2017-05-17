@@ -3,14 +3,14 @@ ScratchBlocks.Categories.css = "css";
 
 ScratchBlocks.Blocks['css'] = {
     init: function () {
-        this.jsonInit({
+        this.jsonInit({rR
             "id": "css",
             "message0": "CSS",
             "message1": "%1",
             "args1": [
                 {
                     "type": "input_statement",
-                    "name": "SUBSTACK"
+                    "name": "SUBSTACK"r
                 }
             ],
             "inputsInline": true,
@@ -64,20 +64,20 @@ ScratchBlocks.Blocks['css_selector'] = {
         var realTop = getTop(this);
         var top = this.getSurroundParent() || this;
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
-            this.setDisabled(true);
+            this.disabled = true;
         } else if (!realTop.previousConnection && top.type === "css" && realTop.type === "css") {
-            this.setDisabled(false);
+            this.disabled = false;
         } else if (realTop.previousConnection) {
-            this.setDisabled(false);
+            this.disabled = false;
         } else {
-            this.setDisabled(true);
+            this.disabled = true;
         }
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.setDisabled(true);
+                        this.disabled = true;
                     }
                 }
             }
@@ -132,20 +132,20 @@ ScratchBlocks.Blocks['css_attribute'] = {
         var realTop = getTop(this);
         var top = this.getSurroundParent() || this;
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
-            this.setDisabled(true);
+            this.disabled = true;
         } else if (!realTop.previousConnection && top.type === "css_selector" && realTop.type === "css") {
-            this.setDisabled(false);
+            this.disabled = false;
         } else if (realTop.previousConnection) {
-            this.setDisabled(false);
+            this.disabled = false;
         } else {
-            this.setDisabled(true);
+            this.disabled = true;
         }
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.setDisabled(true);
+                        this.disabled = true;
                     }
                 }
             }

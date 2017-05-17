@@ -3,14 +3,14 @@ ScratchBlocks.Categories.css = "css";
 
 ScratchBlocks.Blocks['css'] = {
     init: function () {
-        this.jsonInit({rR
+        this.jsonInit({
             "id": "css",
             "message0": "CSS",
             "message1": "%1",
             "args1": [
                 {
                     "type": "input_statement",
-                    "name": "SUBSTACK"r
+                    "name": "SUBSTACK"
                 }
             ],
             "inputsInline": true,

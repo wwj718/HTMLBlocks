@@ -8,7 +8,7 @@ ScratchBlocks.JavaScript.INDENT = "";
 ScratchBlocks.Blocks["text"].onchange = function () {
     if (this.getParent() && this.getParent().disabled) {
         this.disabled = true;
-    } else {r
+    } else {
         this.disabled = false;
     }
     if (this.disabled) {

@@ -113,4 +113,12 @@ window.onload = function () {
             throw "No HTML Block!";
         }
     };
+    
+    document.getElementById("about").onclick = function () {
+        document.getElementById("boxOuter").style.display = "initial";
+    };
+    
+    document.getElementById("close").onclick = function () {
+        document.getElementById("boxOuter").style.display = "none";
+    };
 };

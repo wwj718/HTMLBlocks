@@ -64,20 +64,20 @@ ScratchBlocks.Blocks['html_element'] = {
         }
         var top = getTop(this);
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
-            this.setDisabled(true);
+            this.disabled = true;
         } else if (!top.previousConnection && top.type === "html") {
-            this.setDisabled(false);
+            this.disabled = false;
         } else if (top.previousConnection) {
-            this.setDisabled(false);
+            this.disabled = false;
         } else {
-            this.setDisabled(true);
+            this.disabled = true;
         }
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.setDisabled(true);
+                        this.disabled = true;
                     }
                 }
             }
@@ -128,20 +128,20 @@ ScratchBlocks.Blocks['html_text'] = {
         }
         var top = getTop(this);
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
-            this.setDisabled(true);
+            this.disabled = true;
         } else if (!top.previousConnection && top.type === "html") {
-            this.setDisabled(false);
+            this.disabled = false;
         } else if (top.previousConnection) {
-            this.setDisabled(false);
+            this.disabled = false;
         } else {
-            this.setDisabled(true);
+            this.disabled = true;
         }
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.setDisabled(true);
+                        this.disabled = true;
                     }
                 }
             }
@@ -193,20 +193,20 @@ ScratchBlocks.Blocks['html_attribute'] = {
         }
         var top = getTop(this);
         if (this.getSurroundParent() && this.getSurroundParent().disabled) {
-            this.setDisabled(true);
+            this.disabled = true;
         } else if (!top.previousConnection && top.type === "html") {
-            this.setDisabled(false);
+            this.disabled = false;
         } else if (top.previousConnection) {
-            this.setDisabled(false);
+            this.disabled = false;
         } else {
-            this.setDisabled(true);
+            this.disabled = true;
         }
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
-                        this.setDisabled(true);
+                        this.disabled = true;
                     }
                 }
             }

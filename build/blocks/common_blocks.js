@@ -52,7 +52,7 @@ var newNameBlock = function (internalName, attributeName, category, block) {
                 console.log("Bad Block");
                 this.setDisabled(true);
             }
-            if (this.getParent() && this.getParent().disabled && !this.getParent().inputDisabled) {
+            if (this.getParent() && this.getParent().disabled) {
                 console.log("Parent Disabled");
                 this.setDisabled(true);
             }

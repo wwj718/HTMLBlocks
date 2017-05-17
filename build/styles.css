@@ -101,6 +101,7 @@ action {
     z-index: 200;
 }
 #close::before {
+    padding: 0;
     width: 100%;
     text-align: right;
     font-size: 36pt;

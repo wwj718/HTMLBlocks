@@ -80,3 +80,16 @@ action {
     font-family: sans-serif;
     text-anchor: end;
 }
+#boxInner {
+    margin: 50%;
+    background-color: white;
+}
+#boxOuter {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}

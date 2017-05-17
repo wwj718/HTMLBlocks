@@ -40,6 +40,8 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             });
         },
         onchange: function () {
+            console.log(block);
+            console.log(this.getParent());
             if (this.getParent() && this.getParent().type === block) {
                 console.log("Good Block");
                 this.setDisabled(false);

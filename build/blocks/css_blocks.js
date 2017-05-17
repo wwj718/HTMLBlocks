@@ -29,6 +29,7 @@ ScratchBlocks.JavaScript['css'] = function (block) {
 
 ScratchBlocks.Blocks['css_selector'] = {
     init: function () {
+        this.inputDisabled = false;
         this.jsonInit({
             "id": "css_selector",
             "message0": "selector %1",
@@ -72,11 +73,13 @@ ScratchBlocks.Blocks['css_selector'] = {
         } else {
             this.setDisabled(true);
         }
+        this.inputDisabled = false;
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
+                        this.inputDisabled = true;
                         this.setDisabled(true);
                     }
                 }
@@ -100,6 +103,7 @@ ScratchBlocks.JavaScript['css_selector'] = function (block) {
 
 ScratchBlocks.Blocks['css_attribute'] = {
     init: function () {
+        this.inputDisabled = false;
         this.jsonInit({
             "id": "css_attribute",
             "message0": "set attribute %1 to %2",
@@ -140,11 +144,13 @@ ScratchBlocks.Blocks['css_attribute'] = {
         } else {
             this.setDisabled(true);
         }
+        this.inputDisabled = false;
         var inputs = this.inputList;
         for (i = 0; i < inputs.length; i++) {
             if (inputs[i].type !== 3 && inputs[i].connection) {
                 if (inputs[i].connection.targetBlock()) {
                     if (inputs[i].connection.targetBlock().disabled && inputs[i].connection.targetBlock().isName) {
+                        this.inputDisabled = true;
                         this.setDisabled(true);
                     }
                 }

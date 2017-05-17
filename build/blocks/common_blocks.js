@@ -41,11 +41,14 @@ var newNameBlock = function (internalName, attributeName, category, block) {
         },
         onchange: function () {
             if (this.getParent() && this.getParent().disabled) {
+                console.log("Parent Disabled");
                 this.setDisabled(true);
             } else {
                 if (this.getParent() && this.getParent().type !== block) {
+                    console.log("Bad Block");
                     this.setDisabled(true);
                 } else {
+                    console.log("Yeah!");
                     this.setDisabled(false);
                 }
             }

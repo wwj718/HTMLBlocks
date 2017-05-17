@@ -47,6 +47,8 @@ var newNameBlock = function (internalName, attributeName, category, block) {
             }
             if (this.getParent() && this.getParent().disabled && !this.getParent().inputDisabled) {
                 this.setDisabled(true);
+            } else {
+                this.setDisabled(false);
             }
             if (this.disabled) {
                 if (!this.isInsertionMarker()) this.setOpacity(0.45);

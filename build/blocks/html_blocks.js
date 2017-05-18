@@ -92,7 +92,7 @@ ScratchBlocks.Blocks['html_element'] = {
 
 ScratchBlocks.JavaScript['html_element'] = function (block) {
     var element = ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT');
-    var code = "var tag = 'P';try{document.createElement('" + 
+    var code = "var tag = 'DIV';try{document.createElement('" + 
         element + 
         "');tag = '" + 
         element + 

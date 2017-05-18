@@ -111,10 +111,12 @@ action {
     font-size: 36pt;
     content: "✕";
     margin: 5%;
+    font-family: sans-serif;
 }
 #textContainer {
     text-align: center;
     margin: 5%;
+    font-family: sans-serif;
 }
 #text {
     font-size: 16pt;

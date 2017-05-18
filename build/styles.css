@@ -117,11 +117,13 @@ action {
     text-align: center;
     margin: 5%;
     font-family: sans-serif;
+    list-style-position: inside;
+    vertical-align: middle;
 }
 #text {
-    font-size: 16pt;
+    font-size: 12pt;
 }
 #textBold {
-    font-size: 18pt;
+    font-size: 16pt;
     font-weight: bold;
 }

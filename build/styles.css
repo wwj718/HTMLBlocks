@@ -114,11 +114,12 @@ action {
 }
 #textContainer {
     text-align: center;
+    margin: 5%;
 }
 #text {
-    padding: 0;
-    width: 100%;
     font-size: 16pt;
-    margin: 5%;
-    height: 100%;
+}
+#textBold {
+    font-size: 24pt;
+    font-weight: bold;
 }

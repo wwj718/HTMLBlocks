@@ -91,11 +91,14 @@ ScratchBlocks.Blocks['html_element'] = {
 };
 
 ScratchBlocks.JavaScript['html_element'] = function (block) {
+    var element = ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT');
     var code = "element.appendChild((function (element) {" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
         "return element;})(document.createElement('" + 
-        ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT') + 
-        "')));";
+        element + 
+        "') ? document.createElement('" + 
+        element + 
+        "') : document.createElement('DIV')));";
     return code;
 };
 
@@ -220,9 +223,9 @@ ScratchBlocks.Blocks['html_attribute'] = {
 };
 
 ScratchBlocks.JavaScript['html_attribute'] = function (block) {
-    return "element.setAttribute('" + 
+    return "try{element.setAttribute('" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'ATTRIBUTE') + 
         "','" + 
         ScratchBlocks.JavaScript.valueToCode(block, 'VALUE') + 
-        "');";
+        "');}catch(e){}";
 };

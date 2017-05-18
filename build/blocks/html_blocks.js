@@ -92,13 +92,12 @@ ScratchBlocks.Blocks['html_element'] = {
 
 ScratchBlocks.JavaScript['html_element'] = function (block) {
     var element = ScratchBlocks.JavaScript.valueToCode(block, 'ELEMENT');
-    var code = "element.appendChild((function (element) {" + 
+    var code = "var tag = 'P';try{tag = '" + 
+        element + 
+        "';}catch(e){}" + 
+        "element.appendChild((function (element) {" + 
         ScratchBlocks.JavaScript.statementToCode(block, 'SUBSTACK') + 
-        "return element;})(document.createElement('" + 
-        element + 
-        "') ? document.createElement('" + 
-        element + 
-        "') : document.createElement('DIV')));";
+        "return element;})(document.createElement(tag)));";
     return code;
 };
 

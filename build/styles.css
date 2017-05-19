@@ -111,6 +111,7 @@ action {
     font-size: 36pt;
     content: "✕";
     margin: 5%;
+    margin-bottom: 0;
     font-family: sans-serif;
 }
 #textContainer {
@@ -121,7 +122,7 @@ action {
     list-style-position: inside;
     vertical-align: middle;
     overflow: auto;
-    height: calc(100% - 36pt);
+    height: calc(95% - 42pt);
 }
 #text {
     font-size: 12pt;

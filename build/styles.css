@@ -118,11 +118,12 @@ action {
     text-align: center;
     margin: 5%;
     margin-top: 0;
+    margin-bottom: 0;
     font-family: sans-serif;
     list-style-position: inside;
     vertical-align: middle;
     overflow: auto;
-    height: calc(75% - 42pt);
+    height: calc(90% - 64pt);
 }
 #text {
     font-size: 12pt;

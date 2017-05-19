@@ -104,6 +104,7 @@ action {
 }
 #closeContainer {
     text-align: right;
+    height: 10%;
 }
 #close::before {
     padding: 0;
@@ -120,7 +121,7 @@ action {
     list-style-position: inside;
     vertical-align: middle;
     overflow: auto;
-    height: 75%;
+    height: 90%;
 }
 #text {
     font-size: 12pt;

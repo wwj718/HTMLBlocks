@@ -119,6 +119,7 @@ action {
     font-family: sans-serif;
     list-style-position: inside;
     vertical-align: middle;
+    overflow: auto;
 }
 #text {
     font-size: 12pt;

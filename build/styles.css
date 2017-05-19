@@ -116,6 +116,7 @@ action {
 #textContainer {
     text-align: center;
     margin: 5%;
+    margin-top: 0;
     font-family: sans-serif;
     list-style-position: inside;
     vertical-align: middle;

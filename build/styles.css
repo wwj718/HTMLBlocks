@@ -120,6 +120,7 @@ action {
     list-style-position: inside;
     vertical-align: middle;
     overflow: auto;
+    height: 100%;
 }
 #text {
     font-size: 12pt;

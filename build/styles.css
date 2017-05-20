@@ -105,11 +105,10 @@ action {
 #closeContainer {
     text-align: right;
 }
-#close::before {
+#close {
     padding: 0;
     width: 100%;
     font-size: 36pt;
-    content: "✕";
     margin: 5%;
     margin-bottom: 0;
     font-family: sans-serif;

@@ -1,0 +1,6 @@
+script:
+  - bash ./deploy-to-gh-pages.sh
+env:
+  global:
+    - GITHUB_REPO: "TheBrokenRail/HTMLBlocks"
+    - secure: "uzg7aPSNt/W9XJ1xFsVDaZowTGTq+EcDG2F3eN91YyIz1SLMdeQ2RSg1xiAgXFjgLPUHD/Cf5mNHQoVN+b4d2Ylepgu2aeFbBs/m7CgfxoNxsU14LE7mgD7IOn72mNuKc+OBOXEjhpuVTUNfIfp8kKFuG0tdg9ZCZDxDticHaFtQdaVbrVQobsw1sCjvvXHNFbxjRxlYEFCoB2EyXR4wdpnSsGt+5vhZ8FdmwP+3EiCGZQ14pQGplE2hvGNoA5bUB+3IuuRlhHWwdOwtqRRXW+VeabdUDrLESmnTN165yE/B/v5TrNUj6I/e4KE8YV5Im/Q1d5LzZt5IMAEX5xVLdJ38oJIASJYqDwjU4PwgywONunaMr98gq/KbfQVcu0tZ0jEP0dJD+I0fQ98qZwqHxo97EhukdBn1R70crhSAyHB01IvRoQkemY6/yGHlLA9ccu32sh8/S95JvYImZ6TMP7/tlDpntGbgClgc9gaYgXqo37eYj7t/CpQ7vAHMBcuapFaq8EgiPe2pLsMQ5rj8psffo+RdJOt5NtLmmt00hpVBuYPBLORqiMaEByRTy6GKAt5VPFj7QQdredVG9Ff8xCPLVCZqcOPbodIyx/cb/eu1sZ+FEvPFq/h5gaU0jMFrVjXZNInCK6Rf3O6gCuR+kzNPZuLv8yxOljIK3t+6Bx8="

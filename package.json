@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify index.js -o build/bundle.js && ncp node_modules/scratch-blocks/media build/media"
+    "build": "node patch.js && browserify index.js -o build/bundle.js && ncp node_modules/scratch-blocks/media build/media"
   },
   "author": "",
   "license": "ISC",

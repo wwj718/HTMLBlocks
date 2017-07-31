@@ -15,18 +15,6 @@
   },
   "devDependencies": {
     "browserify": "^14.1.0",
-    "ncp": "^2.0.0",
-    "browserify-shim": "latest"
-  },
-  "browserify": {
-    "transform": [ "browserify-shim" ]
-  },
-  "browserify-shim": {
-    "scratch-blocks/javascript_compressed": {
-      "exports": "Blockly",
-      "depends": [
-        "scratch-blocks"
-      ]
-    }
+    "ncp": "^2.0.0"
   }
 }

@@ -11,11 +11,22 @@
   "dependencies": {
     "scratch-blocks": "latest",
     "js-beautify": "latest",
-    "xml-js": "latest",
-    "imports-loader": "latest"
+    "xml-js": "latest"
   },
   "devDependencies": {
     "browserify": "^14.1.0",
-    "ncp": "^2.0.0"
+    "ncp": "^2.0.0",
+    "browserify-shim": "latest"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "browserify-shim": {
+    "scratch-blocks/javascript_compressed": {
+      "exports": "Blockly",
+      "depends": [
+        "scratch-blocks"
+      ]
+    }
   }
 }

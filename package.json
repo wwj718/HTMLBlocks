@@ -11,7 +11,8 @@
   "dependencies": {
     "scratch-blocks": "latest",
     "js-beautify": "latest",
-    "xml-js": "latest"
+    "xml-js": "latest",
+    "imports-loader": "latest"
   },
   "devDependencies": {
     "browserify": "^14.1.0",

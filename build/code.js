@@ -1,10 +1,4 @@
 window.onload = function () {
-    var css = window.ScratchBlocks.Css.styleSheet_.cssRules;
-    for (i = 0; i < css.length; i++) {
-        if (css[i].selectorText === '.blocklyDragging > .blocklyPath, .blocklyDragging > .blocklyPathLight') {
-            css[i].style.fillOpacity = '';
-        }
-    }
     var workspace = window.ScratchBlocks.inject('blocks', {
         media: './media/',
         toolbox: document.getElementById('toolbox'),
@@ -19,6 +13,12 @@ window.onload = function () {
         }
     });
     window.workspace = workspace;
+    var css = window.ScratchBlocks.Css.styleSheet_.cssRules;
+    for (i = 0; i < css.length; i++) {
+        if (css[i].selectorText === '.blocklyDragging > .blocklyPath, .blocklyDragging > .blocklyPathLight') {
+            css[i].style.fillOpacity = '';
+        }
+    }
     
     window.ScratchBlocks.Xml.domToWorkspace(document.getElementById('workspace'), workspace);
     workspace.scrollCenter();

@@ -131,6 +131,3 @@ action {
     font-size: 16pt;
     font-weight: bold;
 }
-.blocklyDragging>.blocklyPath {
-    fill-opacity: initial;
-}

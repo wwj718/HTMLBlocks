@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "scratch-blocks": "latest",
+    "scratch-blocks": "<0.1.0-prerelease.1503946751",
     "js-beautify": "latest",
     "xml-js": "latest"
   },
